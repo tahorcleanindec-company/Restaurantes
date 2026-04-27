@@ -40,7 +40,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 3,
@@ -58,7 +58,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
         {
         id: 4,
@@ -76,7 +76,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
         {
         id: 5,
@@ -94,7 +94,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
         {
         id: 6,
@@ -112,7 +112,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
         {
         id: 7,
@@ -130,7 +130,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
      {
         id: 8,
@@ -148,7 +148,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
      {
         id: 9,
@@ -166,7 +166,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
      {
         id: 10,
@@ -184,7 +184,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
      {
         id: 11,
@@ -202,7 +202,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
      {
         id: 12,
@@ -220,7 +220,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 13,
@@ -238,7 +238,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 14,
@@ -256,7 +256,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 15,
@@ -274,7 +274,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 16,
@@ -292,7 +292,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
         {
         id: 17,
@@ -310,7 +310,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 18,
@@ -328,7 +328,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 19,
@@ -346,7 +346,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
 
     
