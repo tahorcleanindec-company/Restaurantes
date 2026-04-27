@@ -22,7 +22,7 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
+        badge: ''
     },
     {
         id: 2,
