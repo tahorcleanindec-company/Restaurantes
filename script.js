@@ -369,12 +369,10 @@ const sizeIcons = {
 const IVA_RATE       = 0.15;
 const WHATSAPP_NUMBER = '+593958812843';
 
-/* ─── STATE ─── */
 let cart        = [];
 let currentSlide= 0;
 let sliderInterval;
 
-/* ─── DOM REFS ─── */
 const header          = document.getElementById('header');
 const mobileMenuBtn   = document.getElementById('mobileMenuBtn');
 const mobileMenu      = document.getElementById('mobileMenu');
@@ -402,9 +400,7 @@ const nextSlide       = document.getElementById('nextSlide');
 const sliderDots      = document.getElementById('sliderDots');
 const newsletterForm  = document.getElementById('newsletterForm');
 
-/* ══════════════════════════════
-   INIT
-══════════════════════════════ */
+
 document.addEventListener('DOMContentLoaded', () => {
     initSlider();
     renderCategories();
@@ -416,9 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
 });
 
-/* ══════════════════════════════
-   EVENT LISTENERS
-══════════════════════════════ */
+
 function initEventListeners() {
     mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
@@ -467,9 +461,7 @@ function initEventListeners() {
     });
 }
 
-/* ══════════════════════════════
-   SLIDER
-══════════════════════════════ */
+
 function initSlider()         { startSliderAutoplay(); }
 function startSliderAutoplay(){ sliderInterval = setInterval(() => changeSlide(1), 5000); }
 function stopSliderAutoplay() { clearInterval(sliderInterval); }
@@ -495,9 +487,7 @@ function goToSlide(index) {
     stopSliderAutoplay(); startSliderAutoplay();
 }
 
-/* ══════════════════════════════
-   SEARCH
-══════════════════════════════ */
+
 function handleSearch() {
     const query = searchInput.value.toLowerCase().trim();
     if (query.length < 2) { searchSuggestions.classList.remove('active'); return; }
@@ -524,9 +514,7 @@ function handleSearch() {
     }
 }
 
-/* ══════════════════════════════
-   CATEGORIES
-══════════════════════════════ */
+
 function renderCategories() {
     categoriesGrid.innerHTML = categories.map(cat => `
         <div class="category-card" data-category="${cat.id}" onclick="filterByCategory('${cat.id}')">
@@ -540,9 +528,7 @@ function renderFooterCategories() {
         `<li><a href="#productos" onclick="filterByCategory('${c.id}')">${c.name}</a></li>`).join('');
 }
 
-/* ══════════════════════════════
-   FILTER BUTTONS
-══════════════════════════════ */
+
 function renderFilterButtons() {
     const buttons = categories.map(cat =>
         `<button class="filter-btn" data-category="${cat.id}" onclick="filterByCategory('${cat.id}')">${cat.name}</button>`
@@ -559,9 +545,7 @@ function filterByCategory(categoryId) {
     renderProducts(filtered);
 }
 
-/* ══════════════════════════════
-   RENDER PRODUCTS
-══════════════════════════════ */
+
 function renderProducts(productsToRender = products) {
     productsGrid.innerHTML = productsToRender.map(product => {
         const firstPrice = Object.values(product.prices)[0];
@@ -588,9 +572,7 @@ function getCategoryName(categoryId) {
     return cat ? cat.name : categoryId;
 }
 
-/* ══════════════════════════════
-   PRODUCT MODAL
-══════════════════════════════ */
+
 function openProductModal(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -715,9 +697,7 @@ function quickAddToCart(productId) {
     openCart();
 }
 
-/* ══════════════════════════════
-   CART
-══════════════════════════════ */
+
 function addToCart(productId, size, price) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -801,9 +781,7 @@ function updateCartUI() {
 function openCart()       { cartDrawer.classList.add('active'); cartOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
 function closeCartDrawer(){ cartDrawer.classList.remove('active'); cartOverlay.classList.remove('active'); document.body.style.overflow=''; }
 
-/* ══════════════════════════════
-   CHECKOUT
-══════════════════════════════ */
+
 function openCheckoutModal() {
     closeCartDrawer();
     const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
@@ -885,14 +863,11 @@ function handleCheckout(e) {
     alert('¡Tu pedido ha sido enviado por WhatsApp! Te contactaremos pronto.');
 }
 
-/* ══════════════════════════════
-   UTILS
-══════════════════════════════ */
+
 function formatPrice(price) {
     return Number(price).toLocaleString('es-EC', { minimumFractionDigits:2, maximumFractionDigits:2 });
 }
 
-/* ── GLOBAL EXPOSE (igual que el script hospitalario) ── */
 window.openProductModal    = openProductModal;
 window.changeGalleryImage  = changeGalleryImage;
 window.playVideo           = playVideo;
