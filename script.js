@@ -1,22 +1,25 @@
 const categories = [
-    { id: 'desengrasantes',   name: 'Desengrasantes',     icon: '🔥' },
-    { id: 'desinfectantes',   name: 'Desinfectantes',     icon: '🍽️' },
-    { id: 'personal',         name: 'Personal',           icon: '🛡️' },
+    { id: 'desengrasantes_de_cocina',   name: 'Desengrasantes de cocina',     icon: '🔥' },
+    { id: 'desinfeción_y_sanitización',   name: 'Desinfección y sanitización',     icon: '🍽️' },
+    { id: 'higiene_de_manos',         name: 'Higiene de manos',           icon: '🛡️' },
     { id: 'multiusos',        name: 'Multiusos',          icon: '🤲' },
+    { id: 'lavado_de_vajilla_y_utensilios',        name: 'Lavado de vajilla y utensilios',          icon: '🤲' },
+    { id: 'desincrustantes_y_ácidos',        name: 'Desincrustantes y ácidos',          icon: '🤲' },
+
+
 ];
 
 const products = [
     {
         id: 1,
-        name: 'TAHOR WASH',
-        category: 'desengrasantes',
-        description: 'Detergente espumante con alta concentración de tensoactivos. Efectivo para removertodo tipo de residuos,como alimentos, grasa ytodo todo tipo desuciedad, no contiene aroma',
-        longDescription: 'Detergente espumante con alta concentración de tensoactivos. Efectivo para removertodo tipo de residuos,como alimentos, grasa ytodo todo tipo desuciedad, no contiene aroma',
+        name: 'DETER 100',
+        category: 'desengrasantes_de_cocina',
+        description: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
+        longDescription: 'DDesengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Limpieza constante',
+            'Buen rendimiento ',
+            'Uso diario ',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -27,14 +30,13 @@ const products = [
     {
         id: 2,
         name: 'DETER PLUS',
-        category: 'desengrasantes',
-        description: 'Detergente desengrasante pH 11,espuma media. Gradoalimenticio. Excelente eficiencia para limpieza profunda, ylimpieza diaria.',
-        longDescription: 'Detergente desengrasante pH 11,espuma media. Gradoalimenticio. Excelente eficiencia para limpieza profunda, ylimpieza diaria.',
+        category: 'desengrasantes_de_cocina',
+        description: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
+        longDescription: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Elimina grasa pesada',
+            'Acción rápida ',
+            'Reduce esfuerzo ',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -45,7 +47,7 @@ const products = [
     {
         id: 3,
         name: 'DETER PRO',
-        category: 'desengrasantes',
+        category: 'desengrasantes_de_cocina',
         description: 'Desengrasante alcalino concentrado, pH 13,espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
         longDescription: 'Desengrasante alcalino concentrado, pH 13,espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
         features: [
@@ -63,7 +65,7 @@ const products = [
         {
         id: 4,
         name: 'DETER 100 CLORADO',
-        category: 'desengrasantes',
+        category: 'desengrasantes_de_cocina',
         description: 'Detergente desengrasante desinfectante, efectivo para la remoción de proteínas y grasas.',
         longDescription: 'Detergente desengrasante desinfectante, efectivo para la remoción de proteínas y grasas.',
         features: [
@@ -81,7 +83,7 @@ const products = [
         {
         id: 5,
         name: 'DETER 100 REMOVER',
-        category: 'desengrasantes',
+        category: 'desengrasantes_de_cocina',
         description: 'Detergente espumante neutro con peróxido de hidrógeno.',
         longDescription: 'Detergente espumante neutro con peróxido de hidrógeno.',
         features: [
@@ -96,17 +98,33 @@ const products = [
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-        {
+       {
         id: 6,
-        name: 'SANITIZER TC',
-        category: 'desinfectantes',
-        description: 'Ácido peracético al 30%. Diseñado para la limpieza y desinfección eficaz de superficies en entornos donde la higiene es crítica.',
-        longDescription: 'Ácido peracético al 30%. Diseñado para la limpieza y desinfección eficaz de superficies en entornos donde la higiene es crítica.',
+        name: 'DETER GRILL',
+        category: 'desengrasantes_de_cocina',
+        description: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
+        longDescription: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Remueve grasa quemada',
+            'Ideal para parrillas ',
+            'Limpieza profunda ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+     {
+        id: 7,
+        name: 'DESTAPADRO CLEAN (SODA 20%)',
+        category: 'desengrasantes_de_cocina',
+        description: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
+        longDescription: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
+        features: [
+            'Destapa tuberías rápidamente ',
+            'Disuelve grasa sólida',
+            'Previene obstrucciones',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -115,34 +133,15 @@ const products = [
         badge: ''
     },
         {
-        id: 7,
-        name: 'OXIQUATS',
-        category: 'desinfectantes',
-        description: '50% peróxido + 10% amonios cuaternarios',
-        longDescription: '50% peróxido + 10% amonios cuaternarios',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
-        video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
-    },
-     {
         id: 8,
-        name: 'SANIBAT',
-        category: 'desinfectantes',
-        description: 'Amonios cuaternarios de 5ta generación al 12%',
-        longDescription: 'Amonios cuaternarios de 5ta generación al 12%',
+        name: 'SANITIZER TC',
+        category: 'desinfeción_y_sanitización',
+        description: 'Desinfectante oxidante de alto nivel para superficies y equipos.',
+        longDescription: 'Desinfectante oxidante de alto nivel para superficies y equipos.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Alta desinfección ',
+            'Acción rápida ',
+            'Uso profesional ',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -150,17 +149,16 @@ const products = [
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+        {
         id: 9,
-        name: 'DIOXIGEN PRO',
-        category: 'desinfectantes',
-        description: 'Peróxido de hidrógeno al 50%',
-        longDescription: 'Peróxido de hidrógeno al 50%',
+        name: 'OXIQUATS',
+        category: 'desinfeción_y_sanitización',
+        description: 'Combinación de peróxido y amonios para desinfección avanzada.',
+        longDescription: 'Combinación de peróxido y amonios para desinfección avanzada.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Doble acción desinfectante ',
+            'Mayor cobertura ',
+            'Alta eficacia ',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -170,15 +168,14 @@ const products = [
     },
      {
         id: 10,
-        name: 'TAHOX 100',
-        category: 'desinfectantes',
-        description: 'Ácido fosfórico al 35%, especial para limpieza ácida de contacto',
-        longDescription: 'Ácido fosfórico al 35%, especial para limpieza ácida de contacto',
+        name: 'SANIBAT',
+        category: 'desinfeción_y_sanitización',
+        description: 'Desinfectante de amonio cuaternario para superficies generales en cocina.',
+        longDescription: 'Desinfectante de amonio cuaternario para superficies generales en cocina.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Elimina bacterias',
+            'Uso diario',
+            'Seguro en superficies',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -188,15 +185,14 @@ const products = [
     },
      {
         id: 11,
-        name: 'JDM',
-        category: 'personal',
-        description: 'Jabón neutro para manos',
-        longDescription: 'Jabón neutro para manos',
+        name: 'DIOXIGEN PRO',
+        category: 'desinfeción_y_sanitizacións',
+        description: 'Desinfectante potente para control de bacterias y eliminación de olores en superficies y drenajes.',
+        longDescription: 'Desinfectante potente para control de bacterias y eliminación de olores en superficies y drenajes.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Elimina malos olores ',
+            'Desinfección efectiva ',
+            'Uso versátil ',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -206,8 +202,60 @@ const products = [
     },
      {
         id: 12,
+        name: 'TAHOX 100',
+        category: 'desinfeción_y_sanitización',
+        description: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
+        longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
+        features: [
+            'Alta capacidad desincrustante ',
+            'Limpieza profunda ',
+            'Resultados visibles ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+     {
+        id: 13,
+        name: 'CLORO 50 / HIPOCLORITO',
+        category: 'desinfeción_y_sanitización',
+        description: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
+        longDescription: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
+        features: [
+            'Alta eliminación bacteriana ',
+            'Uso económico ',
+            'Amplio espectro ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+
+     {
+        id: 13,
+        name: 'JDM',
+        category: 'higiene_de_manos',
+        description: 'Jabón para lavado frecuente de manos en entornos de manipulación de alimentos.',
+        longDescription: 'Jabón para lavado frecuente de manos en entornos de manipulación de alimentos.',
+        features: [
+            'Limpieza segura ',
+            'Uso frecuente ',
+            'Protege la piel ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+     {
+        id: 14,
         name: 'JABÓN LÍQUIDO CON AROMA',
-        category: 'personal',
+        category: 'higiene_de_manos',
         description: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
         longDescription: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
         features: [
@@ -223,16 +271,15 @@ const products = [
         badge: ''
     },
     {
-        id: 13,
+        id: 15,
         name: 'ALCOHOL GEL',
-        category: 'personal',
-        description: 'Gel desinfectante sin enjuague. Con su contenido superior al 70% de alcohol, recomendado para desinfectar manos, no deja las manos pegajosas.',
-        longDescription: 'Gel desinfectante sin enjuague. Con su contenido superior al 70% de alcohol, recomendado para desinfectar manos, no deja las manos pegajosas.',
+        category: 'higiene_de_manos',
+        description: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
+        longDescription: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
         features: [
-            'text',
-            'text',
-            'text',
-            'text',
+            'Eliminación rápida de bacterias ',
+            'Uso práctico ',
+            'Ideal para cocina ',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
@@ -241,9 +288,9 @@ const products = [
         badge: ''
     },
     {
-        id: 14,
+        id: 16,
         name: 'ALCOHOL ANTISÉPTICO',
-        category: 'personal',
+        category: 'higiene_de_manos',
         description: ' Alcohol líquido al 70%.',
         longDescription: 'Alcohol líquido al 70%.',
         features: [
@@ -259,7 +306,7 @@ const products = [
         badge: ''
     },
     {
-        id: 15,
+        id: 17,
         name: 'SEGURICLEAN',
         category: 'multiusos',
         description: 'Poderoso limpiador para higiene impecable eliminando el 99.9% de gérmenes y bacterias, sino un baño resplandeciente y una fragancia duradera, garantizando un ambiente fresco y libre de impurezas con cada uso.',
@@ -277,7 +324,7 @@ const products = [
         badge: ''
     },
     {
-        id: 16,
+        id: 18,
         name: 'SEGURICLEAN DESINFTANTE',
         category: 'multiusos',
         description: 'Limpiador y desinfectante con agradable aroma. Ligeramente viscoso.',
@@ -292,10 +339,10 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
+        badge: 'new'
     },
         {
-        id: 17,
+        id: 19,
         name: 'ELIMINADOR DE OLORES',
         category: 'multiusos',
         description: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente, con una mezcla de fragancias dejando una sensación de higiene y limpieza.',
@@ -310,10 +357,10 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
+        badge: 'new'
     },
     {
-        id: 18,
+        id: 20,
         name: 'Limpia Vidrios',
         category: 'multiusos',
         description: 'Limpieza rápida de cristales y vitrinas.',
@@ -328,10 +375,10 @@ const products = [
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
         codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
+        badge: 'new'
     },
     {
-        id: 19,
+        id: 21,
         name: 'IN-TAHOR',
         category: 'multiusos',
         description: 'APC (Limpieza Multiusos) (All Purpose Cleaner) listo para usar.',
@@ -341,6 +388,176 @@ const products = [
             'text',
             'text',
             'text',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: 'new'
+    },
+    {
+        id: 21,
+        name: 'Lavavajillas con Aroma',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
+        longDescription: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
+        features: [
+            'Remueve grasa fácilmente ',
+            'Deja aroma agradable ',
+            'Ideal para uso frecuente ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+     {
+        id: 22,
+        name: 'Lavavajillas Neutro',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
+        longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
+        features: [
+            'Seguro para superficies alimentarias ',
+            'No deja residuos ',
+            'Cuida manos y utensilios ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 23,
+        name: 'Tahor Wash R',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
+        longDescription: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
+        features: [
+            'Sin aroma (uso alimentario seguro)',
+            'Alta eficiencia de limpieza',
+            'Ideal para uso profesional ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 24,
+        name: 'Tahor Wash R',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
+        longDescription: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
+        features: [
+            'Sin aroma (uso alimentario seguro)',
+            'Alta eficiencia de limpieza',
+            'Ideal para uso profesional ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 25,
+        name: 'Tahor Wash  (Alta Espuma)',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios. Proporciona mayor cobertura y facilita la remoción de grasa.',
+        longDescription: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios. Proporciona mayor cobertura y facilita la remoción de grasa.',
+        features: [
+            'Espuma abundante',
+            'Mejora cobertura ',
+            'Facilita limpieza rápida ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 26,
+        name: 'Deter Clean (Lavavajillas automático)',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
+        longDescription: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
+        features: [
+            'Limpieza eficiente en máquina',
+            'Evita manchas en vajilla',
+            'Alto rendimiento',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 27,
+        name: 'ÁCIDO SANITIZANTE',
+        category: 'desincrustantes_y_ácidos',
+        description: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
+        longDescription: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
+        features: [
+            'Elimina incrustaciones ',
+            'Acción desinfectante ',
+            'Mejora higiene ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 28,
+        name: 'ACIMUR',
+        category: 'desincrustantes_y_ácidos',
+        description: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
+        longDescription: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
+        features: [
+            'Remueve sarro ',
+            'Recupera superficies ',
+            'Uso técnico  ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+     {
+        id: 29,
+        name: 'TAHOX 100',
+        category: 'desincrustantes_y_ácidos',
+        description: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
+        longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
+        features: [
+            'Alta capacidad desincrustante',
+            'Limpieza profunda ',
+            'Resultados visibles  ',
+        ],
+        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 30,
+        name: 'NITRI TC PLUS',
+        category: 'desincrustantes_y_ácidos',
+        description: 'Descripción: Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
+        longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
+        features: [
+            'Disuelve minerales',
+            'Limpieza intensiva',
+            'Uso profesional',
         ],
         images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
         video: null,
