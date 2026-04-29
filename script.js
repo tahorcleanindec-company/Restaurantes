@@ -319,8 +319,8 @@ const products = [
         features: ['99.9% efectividad', 'Fragancia duradera', 'Multiusos', 'Profesional'],
         imagesBySize:  {
             '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            'galon': 'img/59212 SEGURICELAN BAÑO.webp',
+            'caneca':'img/59212 SEGURICELAN BAÑO.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
