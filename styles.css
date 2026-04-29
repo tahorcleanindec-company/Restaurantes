@@ -197,15 +197,15 @@
  
         .slide:nth-child(1) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.75) 0%,rgba(30,15,5,.65) 100%),
-                        url('https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=1600&q=80') center/cover !important;
+                        url('img/woman-holding-rag-detergent-cleaning-cooker.jpg') center/cover !important;
         }
         .slide:nth-child(2) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.78) 0%,rgba(10,25,15,.65) 100%),
-                        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80') center/cover !important;
+                        url('img/closeup-hand-glove-cleaning-table-with-foam-detergent.jpg') center/cover !important;
         }
         .slide:nth-child(3) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.75) 0%,rgba(20,10,5,.68) 100%),
-                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80') center/cover !important;
+                        url('img/industrial-worker-with-protective-mask-white-uniform-holding-plastic-cans-chemical-industry.jpg') center/cover !important;
         }
  
         .slide-content {
