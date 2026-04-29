@@ -1,13 +1,22 @@
 const categories = [
-    { id: 'desengrasantes_de_cocina',   name: 'Desengrasantes de cocina',     icon: '🔥' },
-    { id: 'desinfeción_y_sanitización',   name: 'Desinfección y sanitización',     icon: '🍽️' },
-    { id: 'higiene_de_manos',         name: 'Higiene de manos',           icon: '🛡️' },
-    { id: 'multiusos',        name: 'Multiusos',          icon: '🤲' },
-    { id: 'lavado_de_vajilla_y_utensilios',        name: 'Lavado de vajilla y utensilios',          icon: '🤲' },
-    { id: 'desincrustantes_y_ácidos',        name: 'Desincrustantes y ácidos',          icon: '🤲' },
-
-
+    { id: 'desengrasantes_de_cocina',      name: 'Desengrasantes de cocina',        icon: '🔥' },
+    { id: 'desinfecion_y_sanitizacion',    name: 'Desinfección y sanitización',     icon: '🍽️' },
+    { id: 'higiene_de_manos',              name: 'Higiene de manos',                icon: '🛡️' },
+    { id: 'multiusos',                     name: 'Multiusos',                       icon: '🤲' },
+    { id: 'lavado_de_vajilla_y_utensilios',name: 'Lavado de vajilla y utensilios',  icon: '🤲' },
+    { id: 'desincrustantes_y_acidos',      name: 'Desincrustantes y ácidos',        icon: '⚗️' },
 ];
+
+
+function makeSizeImages(base1L, baseGalon, baseCaneca) {
+    return {
+        '1L':    base1L    || 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80',
+        'galon': baseGalon || 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80',
+        'caneca':baseCaneca|| 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80',
+    };
+}
+
+const PLACEHOLDER = 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80';
 
 const products = [
     {
@@ -15,16 +24,16 @@ const products = [
         name: 'DETER 100',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
-        longDescription: 'DDesengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
-        features: [
-            'Limpieza constante',
-            'Buen rendimiento ',
-            'Uso diario ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        longDescription: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
+        features: ['Limpieza constante', 'Buen rendimiento', 'Uso diario'],
+        imagesBySize: {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+        },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
@@ -33,541 +42,530 @@ const products = [
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
         longDescription: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
-        features: [
-            'Elimina grasa pesada',
-            'Acción rápida ',
-            'Reduce esfuerzo ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Elimina grasa pesada', 'Acción rápida', 'Reduce esfuerzo'],
+        imagesBySize: {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
+
+
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 3,
         name: 'DETER PRO',
         category: 'desengrasantes_de_cocina',
-        description: 'Desengrasante alcalino concentrado, pH 13,espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
-        longDescription: 'Desengrasante alcalino concentrado, pH 13,espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Desengrasante alcalino concentrado, pH 13, espuma media. Para limpieza profunda y todo tipo de grasa penetrada. Grado alimenticio.',
+        longDescription: 'Desengrasante alcalino concentrado, pH 13, espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
+        features: ['Concentrado', 'pH 13', 'Grado alimenticio', 'Alta eficacia'],
+        imagesBySize:  {
+            '1L':    'img/Deter100pro.webp',
+            'galon': 'img/deter100porg.webp',
+            'caneca':'img/Deter100proc.webp',
+        },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-        {
+    {
         id: 4,
         name: 'DETER 100 CLORADO',
         category: 'desengrasantes_de_cocina',
         description: 'Detergente desengrasante desinfectante, efectivo para la remoción de proteínas y grasas.',
         longDescription: 'Detergente desengrasante desinfectante, efectivo para la remoción de proteínas y grasas.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Desengrasante', 'Desinfectante', 'Remueve proteínas', 'Uso profesional'],
+        imagesBySize:  {
+            '1L':    'img/deter100cl1.webp',
+            'galon': 'img/35823 DET CLORADO GBR.webp',
+            'caneca':'img/35824 DET CLORADO 20L.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-        {
+    {
         id: 5,
         name: 'DETER 100 REMOVER',
         category: 'desengrasantes_de_cocina',
         description: 'Detergente espumante neutro con peróxido de hidrógeno.',
         longDescription: 'Detergente espumante neutro con peróxido de hidrógeno.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Espumante neutro', 'Peróxido de hidrógeno', 'Alta eficacia', 'Seguro'],
+        imagesBySize: {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-       {
+    {
         id: 6,
         name: 'DETER GRILL',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
         longDescription: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
-        features: [
-            'Remueve grasa quemada',
-            'Ideal para parrillas ',
-            'Limpieza profunda ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Remueve grasa quemada', 'Ideal para parrillas', 'Limpieza profunda'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+    {
         id: 7,
-        name: 'DESTAPADRO CLEAN (SODA 20%)',
+        name: 'DESTAPADOR CLEAN (SODA 20%)',
         category: 'desengrasantes_de_cocina',
         description: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
         longDescription: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
-        features: [
-            'Destapa tuberías rápidamente ',
-            'Disuelve grasa sólida',
-            'Previene obstrucciones',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Destapa tuberías rápidamente', 'Disuelve grasa sólida', 'Previene obstrucciones'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-        {
+    {
         id: 8,
         name: 'SANITIZER TC',
-        category: 'desinfeción_y_sanitización',
+        category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante oxidante de alto nivel para superficies y equipos.',
         longDescription: 'Desinfectante oxidante de alto nivel para superficies y equipos.',
-        features: [
-            'Alta desinfección ',
-            'Acción rápida ',
-            'Uso profesional ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Alta desinfección', 'Acción rápida', 'Uso profesional'],
+        imagesBySize:  {
+            '1L':    'img/sanitizer tc.webp',
+            'galon': 'img/35657 SANITIZER TC.webp',
+            'caneca':'img/35658 SANITIZER 20L.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-        {
+    {
         id: 9,
         name: 'OXIQUATS',
-        category: 'desinfeción_y_sanitización',
+        category: 'desinfecion_y_sanitizacion',
         description: 'Combinación de peróxido y amonios para desinfección avanzada.',
         longDescription: 'Combinación de peróxido y amonios para desinfección avanzada.',
-        features: [
-            'Doble acción desinfectante ',
-            'Mayor cobertura ',
-            'Alta eficacia ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Doble acción desinfectante', 'Mayor cobertura', 'Alta eficacia'],
+        imagesBySize:  {
+            '1L':    'img/Oxi1l.webp',
+            'galon': 'img/48085 OXI QUATS GBC.webp',
+            'caneca':'img/46730 OXIQUATS 20L.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+    {
         id: 10,
         name: 'SANIBAT',
-        category: 'desinfeción_y_sanitización',
+        category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante de amonio cuaternario para superficies generales en cocina.',
         longDescription: 'Desinfectante de amonio cuaternario para superficies generales en cocina.',
-        features: [
-            'Elimina bacterias',
-            'Uso diario',
-            'Seguro en superficies',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Elimina bacterias', 'Uso diario', 'Seguro en superficies'],
+        imagesBySize: {
+            '1L':    'img/sanibat1l.webp',
+            'galon': 'img/35969 SANIBAT GLBR.webp',
+            'caneca':'img/36971 SANIBAT 20L.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+    {
         id: 11,
         name: 'DIOXIGEN PRO',
-        category: 'desinfeción_y_sanitizacións',
+        category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante potente para control de bacterias y eliminación de olores en superficies y drenajes.',
         longDescription: 'Desinfectante potente para control de bacterias y eliminación de olores en superficies y drenajes.',
-        features: [
-            'Elimina malos olores ',
-            'Desinfección efectiva ',
-            'Uso versátil ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Elimina malos olores', 'Desinfección efectiva', 'Uso versátil'],
+        imagesBySize:  {
+            '1L':    'img/dioxigenpro1.webp',
+            'galon': 'img/dioxigen gl.webp',
+            'caneca':'img/Dioxigenpro.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+    {
         id: 12,
         name: 'TAHOX 100',
-        category: 'desinfeción_y_sanitización',
+        category: 'desinfecion_y_sanitizacion',
         description: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
         longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
-        features: [
-            'Alta capacidad desincrustante ',
-            'Limpieza profunda ',
-            'Resultados visibles ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Alta capacidad desincrustante', 'Limpieza profunda', 'Resultados visibles'],
+        imagesBySize: {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+    {
         id: 13,
         name: 'CLORO 50 / HIPOCLORITO',
-        category: 'desinfeción_y_sanitización',
+        category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
         longDescription: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
-        features: [
-            'Alta eliminación bacteriana ',
-            'Uso económico ',
-            'Amplio espectro ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Alta eliminación bacteriana', 'Uso económico', 'Amplio espectro'],
+        imagesBySize:  {
+            '1L':    'img/cloro50L.webp',
+            'galon': 'img/clrogl.webp',
+            'caneca':'img/cloro50C.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-
-     {
-        id: 13,
+    {
+        id: 14,
         name: 'JDM',
         category: 'higiene_de_manos',
         description: 'Jabón para lavado frecuente de manos en entornos de manipulación de alimentos.',
         longDescription: 'Jabón para lavado frecuente de manos en entornos de manipulación de alimentos.',
-        features: [
-            'Limpieza segura ',
-            'Uso frecuente ',
-            'Protege la piel ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Limpieza segura', 'Uso frecuente', 'Protege la piel'],
+        imagesBySize:  {
+            '1L':    'img/jdml1.webp',
+            'galon': 'img/jabonliquidogl.webp',
+            'caneca':'img/jabonliquidojdmc.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
-    },
-     {
-        id: 14,
-        name: 'JABÓN LÍQUIDO CON AROMA',
-        category: 'higiene_de_manos',
-        description: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
-        longDescription: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
-        video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 15,
-        name: 'ALCOHOL GEL',
+        name: 'JABÓN LÍQUIDO CON AROMA',
         category: 'higiene_de_manos',
-        description: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
-        longDescription: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
-        features: [
-            'Eliminación rápida de bacterias ',
-            'Uso práctico ',
-            'Ideal para cocina ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Jabón líquido de uso doméstico e institucional. Tensioactivos + humectantes + pH balanceado.',
+        longDescription: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
+        features: ['pH balanceado', 'Humectante', 'Aroma agradable', 'Uso diario'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/DETER HIPOALARGENICO GBR.webp',
+            'caneca':'img/soap.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 16,
-        name: 'ALCOHOL ANTISÉPTICO',
+        name: 'ALCOHOL GEL',
         category: 'higiene_de_manos',
-        description: ' Alcohol líquido al 70%.',
-        longDescription: 'Alcohol líquido al 70%.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
+        longDescription: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
+        features: ['Eliminación rápida de bacterias', 'Uso práctico', 'Ideal para cocina'],
+        imagesBySize:  {
+            '1L':    'img/gel500.webp',
+            'galon': 'img/gelgl.webp',
+            'caneca':'img/gelc.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 17,
-        name: 'SEGURICLEAN',
-        category: 'multiusos',
-        description: 'Poderoso limpiador para higiene impecable eliminando el 99.9% de gérmenes y bacterias, sino un baño resplandeciente y una fragancia duradera, garantizando un ambiente fresco y libre de impurezas con cada uso.',
-        longDescription: 'Poderoso limpiador para higiene impecable eliminando el 99.9% de gérmenes y bacterias, sino un baño resplandeciente y una fragancia duradera, garantizando un ambiente fresco y libre de impurezas con cada uso.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        name: 'ALCOHOL ANTISÉPTICO',
+        category: 'higiene_de_manos',
+        description: 'Alcohol líquido al 70%.',
+        longDescription: 'Alcohol líquido al 70%.',
+        features: ['70% alcohol', 'Antiséptico', 'Uso directo', 'Alta pureza'],
+        imagesBySize:  {
+            '1L':    'img/alcohol1l.webp',
+            'galon': 'img/alcoholgl.webp',
+            'caneca':'img/alcoantcane.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 18,
-        name: 'SEGURICLEAN DESINFTANTE',
+        name: 'SEGURICLEAN',
+        category: 'multiusos',
+        description: 'Poderoso limpiador que elimina el 99.9% de gérmenes y bacterias. Fragancia duradera.',
+        longDescription: 'Poderoso limpiador para higiene impecable eliminando el 99.9% de gérmenes y bacterias, sino un baño resplandeciente y una fragancia duradera, garantizando un ambiente fresco y libre de impurezas con cada uso.',
+        features: ['99.9% efectividad', 'Fragancia duradera', 'Multiusos', 'Profesional'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
+    {
+        id: 19,
+        name: 'SEGURICLEAN DESINFECTANTE',
         category: 'multiusos',
         description: 'Limpiador y desinfectante con agradable aroma. Ligeramente viscoso.',
         longDescription: 'Limpiador y desinfectante con agradable aroma. Ligeramente viscoso.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Limpia y desinfecta', 'Aroma agradable', 'Viscoso', 'Uso profesional'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: 'new'
-    },
-        {
-        id: 19,
-        name: 'ELIMINADOR DE OLORES',
-        category: 'multiusos',
-        description: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente, con una mezcla de fragancias dejando una sensación de higiene y limpieza.',
-        longDescription: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente, con una mezcla de fragancias dejando una sensación de higiene y limpieza.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
-        video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: 'new'
     },
     {
         id: 20,
-        name: 'Limpia Vidrios',
+        name: 'ELIMINADOR DE OLORES',
+        category: 'multiusos',
+        description: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente con mezcla de fragancias.',
+        longDescription: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente, con una mezcla de fragancias dejando una sensación de higiene y limpieza.',
+        features: ['Elimina olores de raíz', 'No los enmascara', 'Fragancia fresca', 'Ambiente limpio'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: 'new'
+    },
+    {
+        id: 21,
+        name: 'LIMPIA VIDRIOS',
         category: 'multiusos',
         description: 'Limpieza rápida de cristales y vitrinas.',
         longDescription: 'Limpieza rápida de cristales y vitrinas.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Sin rayas', 'Secado rápido', 'Cristalino', 'Fácil aplicación'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: 'new'
     },
     {
-        id: 21,
+        id: 22,
         name: 'IN-TAHOR',
         category: 'multiusos',
-        description: 'APC (Limpieza Multiusos) (All Purpose Cleaner) listo para usar.',
+        description: 'APC (All Purpose Cleaner) — Limpiador Multiusos listo para usar.',
         longDescription: 'APC (Limpieza Multiusos) (All Purpose Cleaner) listo para usar.',
-        features: [
-            'text',
-            'text',
-            'text',
-            'text',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Listo para usar', 'Multiusos', 'Alta eficacia', 'Sin diluir'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: 'new'
-    },
-    {
-        id: 21,
-        name: 'Lavavajillas con Aroma',
-        category: 'lavado_de_vajilla_y_utensilios',
-        description: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
-        longDescription: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
-        features: [
-            'Remueve grasa fácilmente ',
-            'Deja aroma agradable ',
-            'Ideal para uso frecuente ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
-        video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
-    },
-     {
-        id: 22,
-        name: 'Lavavajillas Neutro',
-        category: 'lavado_de_vajilla_y_utensilios',
-        description: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
-        longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
-        features: [
-            'Seguro para superficies alimentarias ',
-            'No deja residuos ',
-            'Cuida manos y utensilios ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
-        video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
     },
     {
         id: 23,
-        name: 'Tahor Wash R',
+        name: 'LAVAVAJILLAS CON AROMA',
         category: 'lavado_de_vajilla_y_utensilios',
-        description: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
-        longDescription: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
-        features: [
-            'Sin aroma (uso alimentario seguro)',
-            'Alta eficiencia de limpieza',
-            'Ideal para uso profesional ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Detergente líquido para vajilla que elimina grasa y suciedad. Aroma agradable, ideal para cocinas de alto movimiento.',
+        longDescription: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
+        features: ['Remueve grasa fácilmente', 'Deja aroma agradable', 'Ideal para uso frecuente'],
+        imagesBySize:  {
+            '1L':'img/lavavajillasLmanzana.webp',
+            'galon':'img/lavavajillasLnaranga.webp',
+
+
+
+           
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 24,
-        name: 'Tahor Wash R',
+        name: 'LAVAVAJILLAS NEUTRO',
         category: 'lavado_de_vajilla_y_utensilios',
-        description: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
-        longDescription: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
-        features: [
-            'Sin aroma (uso alimentario seguro)',
-            'Alta eficiencia de limpieza',
-            'Ideal para uso profesional ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Detergente suave de pH neutro para limpieza segura de vajilla y utensilios. No deja residuos ni olores.',
+        longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
+        features: ['Seguro para superficies alimentarias', 'No deja residuos', 'Cuida manos y utensilios'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 25,
-        name: 'Tahor Wash  (Alta Espuma)',
+        name: 'TAHOR WASH R',
         category: 'lavado_de_vajilla_y_utensilios',
-        description: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios. Proporciona mayor cobertura y facilita la remoción de grasa.',
-        longDescription: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios. Proporciona mayor cobertura y facilita la remoción de grasa.',
-        features: [
-            'Espuma abundante',
-            'Mejora cobertura ',
-            'Facilita limpieza rápida ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Detergente concentrado sin aroma para lavado de utensilios y superficies en cocinas profesionales.',
+        longDescription: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
+        features: ['Sin aroma (uso alimentario seguro)', 'Alta eficiencia de limpieza', 'Ideal para uso profesional'],
+        imagesBySize:  {
+            '1L':    'img/tahorwashrL.webp',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 26,
-        name: 'Deter Clean (Lavavajillas automático)',
+        name: 'TAHOR WASH (ALTA ESPUMA)',
         category: 'lavado_de_vajilla_y_utensilios',
-        description: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
-        longDescription: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
-        features: [
-            'Limpieza eficiente en máquina',
-            'Evita manchas en vajilla',
-            'Alto rendimiento',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        description: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios.',
+        longDescription: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios. Proporciona mayor cobertura y facilita la remoción de grasa.',
+        features: ['Espuma abundante', 'Mejora cobertura', 'Facilita limpieza rápida'],
+        imagesBySize:  {
+            '1L':    'img/tahorwhas1l.webp',
+            'galon': 'img/tahorwashgl.webp',
+            'caneca':'img/35922 TAHOR WASH 20L.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 27,
-        name: 'ÁCIDO SANITIZANTE',
-        category: 'desincrustantes_y_ácidos',
-        description: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
-        longDescription: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
-        features: [
-            'Elimina incrustaciones ',
-            'Acción desinfectante ',
-            'Mejora higiene ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        name: 'DETER CLEAN (LAVAVAJILLAS AUTOMÁTICO)',
+        category: 'lavado_de_vajilla_y_utensilios',
+        description: 'Detergente especializado para máquinas lavavajillas industriales. Elimina grasa sin manchas ni velos.',
+        longDescription: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
+        features: ['Limpieza eficiente en máquina', 'Evita manchas en vajilla', 'Alto rendimiento'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 28,
-        name: 'ACIMUR',
-        category: 'desincrustantes_y_ácidos',
-        description: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
-        longDescription: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
-        features: [
-            'Remueve sarro ',
-            'Recupera superficies ',
-            'Uso técnico  ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        name: 'ÁCIDO SANITIZANTE',
+        category: 'desincrustantes_y_acidos',
+        description: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
+        longDescription: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
+        features: ['Elimina incrustaciones', 'Acción desinfectante', 'Mejora higiene'],
+        imagesBySize: {
+            '1L':    'img/acidosanitizante1l.webp',
+            'galon': 'img/35857 ACIDO ZANITIZANTE GLB.webp',
+            'caneca':'img/35658 AC SANITIZANTE 20L.webp',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-     {
+    {
         id: 29,
-        name: 'TAHOX 100',
-        category: 'desincrustantes_y_ácidos',
-        description: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
-        longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
-        features: [
-            'Alta capacidad desincrustante',
-            'Limpieza profunda ',
-            'Resultados visibles  ',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        name: 'ACIMUR',
+        category: 'desincrustantes_y_acidos',
+        description: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
+        longDescription: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
+        features: ['Remueve sarro', 'Recupera superficies', 'Uso técnico'],
+        imagesBySize: {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
     {
         id: 30,
-        name: 'NITRI TC PLUS',
-        category: 'desincrustantes_y_ácidos',
-        description: 'Descripción: Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
+        name: 'TAHOX 100 (ÁCIDO)',
+        category: 'desincrustantes_y_acidos',
+        description: 'Desincrustante ácido de alto rendimiento para limpieza profunda con acumulación mineral.',
         longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
-        features: [
-            'Disuelve minerales',
-            'Limpieza intensiva',
-            'Uso profesional',
-        ],
-        images: ['https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'],
+        features: ['Alta capacidad desincrustante', 'Limpieza profunda', 'Resultados visibles'],
+        imagesBySize: {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes: { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
-
-    
+    {
+        id: 31,
+        name: 'NITRI TC PLUS',
+        category: 'desincrustantes_y_acidos',
+        description: 'Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
+        longDescription: 'Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
+        features: ['Disuelve minerales', 'Limpieza intensiva', 'Uso profesional'],
+        imagesBySize:  {
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
+            },
+        video: null,
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        badge: ''
+    },
 ];
+
+function getProductImages(product) {
+    return Object.entries(product.prices).map(([size]) => ({
+        size,
+        label: sizeLabels[size] || size,
+        src: (product.imagesBySize && product.imagesBySize[size]) || PLACEHOLDER,
+    }));
+}
+
+function getFirstImage(product) {
+    const sizes = Object.keys(product.prices);
+    if (!sizes.length) return PLACEHOLDER;
+    return (product.imagesBySize && product.imagesBySize[sizes[0]]) || PLACEHOLDER;
+}
 
 const sizeLabels = {
     '500ml': '500 ml',
@@ -577,46 +575,45 @@ const sizeLabels = {
 };
 
 const sizeIcons = {
-    '500ml': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2h8l2 6v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8l2-6z"/><path d="M6 8h12"/></svg>',
-    '1L':    '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h12l2 8v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10l2-8z"/><path d="M4 10h16"/></svg>',
-    'galon': '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v4"/><path d="M15 3v4"/><path d="M3 10h18"/></svg>',
-    'caneca':'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>'
+    '500ml': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2h8l2 6v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8l2-6z"/><path d="M6 8h12"/></svg>',
+    '1L':    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h12l2 8v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10l2-8z"/><path d="M4 10h16"/></svg>',
+    'galon': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v4"/><path d="M15 3v4"/><path d="M3 10h18"/></svg>',
+    'caneca':'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>'
 };
 
-const IVA_RATE       = 0.15;
+const IVA_RATE        = 0.15;
 const WHATSAPP_NUMBER = '+593958812843';
 
-let cart        = [];
-let currentSlide= 0;
+let cart         = [];
+let currentSlide = 0;
 let sliderInterval;
 
-const header          = document.getElementById('header');
-const mobileMenuBtn   = document.getElementById('mobileMenuBtn');
-const mobileMenu      = document.getElementById('mobileMenu');
-const searchInput     = document.getElementById('searchInput');
-const searchSuggestions=document.getElementById('searchSuggestions');
-const cartBtn         = document.getElementById('cartBtn');
-const cartCountEl     = document.getElementById('cartCount');
-const cartDrawer      = document.getElementById('cartDrawer');
-const cartOverlay     = document.getElementById('cartOverlay');
-const closeCart       = document.getElementById('closeCart');
-const cartItems       = document.getElementById('cartItems');
-const cartSummary     = document.getElementById('cartSummary');
-const productModal    = document.getElementById('productModal');
-const closeProductModal=document.getElementById('closeProductModal');
-const productModalContent=document.getElementById('productModalContent');
-const checkoutModal   = document.getElementById('checkoutModal');
-const closeCheckoutModal=document.getElementById('closeCheckoutModal');
-const checkoutFormEl  = document.getElementById('checkoutForm');
-const checkoutSummary = document.getElementById('checkoutSummary');
-const categoriesGrid  = document.getElementById('categoriesGrid');
-const filterButtons   = document.getElementById('filterButtons');
-const productsGrid    = document.getElementById('productsGrid');
-const prevSlide       = document.getElementById('prevSlide');
-const nextSlide       = document.getElementById('nextSlide');
-const sliderDots      = document.getElementById('sliderDots');
-const newsletterForm  = document.getElementById('newsletterForm');
-
+const header           = document.getElementById('header');
+const mobileMenuBtn    = document.getElementById('mobileMenuBtn');
+const mobileMenu       = document.getElementById('mobileMenu');
+const searchInput      = document.getElementById('searchInput');
+const searchSuggestions= document.getElementById('searchSuggestions');
+const cartBtn          = document.getElementById('cartBtn');
+const cartCountEl      = document.getElementById('cartCount');
+const cartDrawer       = document.getElementById('cartDrawer');
+const cartOverlay      = document.getElementById('cartOverlay');
+const closeCart        = document.getElementById('closeCart');
+const cartItems        = document.getElementById('cartItems');
+const cartSummary      = document.getElementById('cartSummary');
+const productModal     = document.getElementById('productModal');
+const closeProductModal= document.getElementById('closeProductModal');
+const productModalContent = document.getElementById('productModalContent');
+const checkoutModal    = document.getElementById('checkoutModal');
+const closeCheckoutModal= document.getElementById('closeCheckoutModal');
+const checkoutFormEl   = document.getElementById('checkoutForm');
+const checkoutSummary  = document.getElementById('checkoutSummary');
+const categoriesGrid   = document.getElementById('categoriesGrid');
+const filterButtons    = document.getElementById('filterButtons');
+const productsGrid     = document.getElementById('productsGrid');
+const prevSlide        = document.getElementById('prevSlide');
+const nextSlide        = document.getElementById('nextSlide');
+const sliderDots       = document.getElementById('sliderDots');
+const newsletterForm   = document.getElementById('newsletterForm');
 
 document.addEventListener('DOMContentLoaded', () => {
     initSlider();
@@ -628,7 +625,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderFooterCategories();
     document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
 });
-
 
 function initEventListeners() {
     mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('active'));
@@ -655,17 +651,19 @@ function initEventListeners() {
         if (e.target.classList.contains('dot')) goToSlide(parseInt(e.target.dataset.slide));
     });
 
-    newsletterForm.addEventListener('submit', e => {
-        e.preventDefault();
-        alert('¡Gracias por suscribirte! Recibirás nuestras ofertas pronto.');
-        newsletterForm.reset();
-    });
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', e => {
+            e.preventDefault();
+            alert('¡Gracias por suscribirte! Recibirás nuestras ofertas pronto.');
+            newsletterForm.reset();
+        });
+    }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) { target.scrollIntoView({ behavior:'smooth' }); mobileMenu.classList.remove('active'); }
+            if (target) { target.scrollIntoView({ behavior: 'smooth' }); mobileMenu.classList.remove('active'); }
         });
     });
 
@@ -678,10 +676,10 @@ function initEventListeners() {
     });
 }
 
-
-function initSlider()         { startSliderAutoplay(); }
-function startSliderAutoplay(){ sliderInterval = setInterval(() => changeSlide(1), 5000); }
-function stopSliderAutoplay() { clearInterval(sliderInterval); }
+// ─── SLIDER ───────────────────────────────────────────────────────────────────
+function initSlider()          { startSliderAutoplay(); }
+function startSliderAutoplay() { sliderInterval = setInterval(() => changeSlide(1), 5000); }
+function stopSliderAutoplay()  { clearInterval(sliderInterval); }
 
 function changeSlide(direction) {
     const slides = document.querySelectorAll('.slide');
@@ -704,7 +702,7 @@ function goToSlide(index) {
     stopSliderAutoplay(); startSliderAutoplay();
 }
 
-
+// ─── SEARCH ───────────────────────────────────────────────────────────────────
 function handleSearch() {
     const query = searchInput.value.toLowerCase().trim();
     if (query.length < 2) { searchSuggestions.classList.remove('active'); return; }
@@ -714,10 +712,10 @@ function handleSearch() {
         p.description.toLowerCase().includes(query)
     );
     if (results.length > 0) {
-        searchSuggestions.innerHTML = results.slice(0,5).map(p => {
+        searchSuggestions.innerHTML = results.slice(0, 5).map(p => {
             const firstPrice = Object.values(p.prices)[0];
             return `<div class="suggestion-item" onclick="openProductModal(${p.id})">
-                <img src="${p.images[0]}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=80&q=60'">
+                <img src="${getFirstImage(p)}" alt="${p.name}" onerror="this.src='${PLACEHOLDER}'">
                 <div>
                     <div style="font-weight:500;color:var(--foreground)">${p.name}</div>
                     <div style="font-size:.8rem;color:var(--primary-light)">$${formatPrice(firstPrice)}</div>
@@ -731,7 +729,7 @@ function handleSearch() {
     }
 }
 
-
+// ─── CATEGORIES ───────────────────────────────────────────────────────────────
 function renderCategories() {
     categoriesGrid.innerHTML = categories.map(cat => `
         <div class="category-card" data-category="${cat.id}" onclick="filterByCategory('${cat.id}')">
@@ -744,15 +742,12 @@ function renderFooterCategories() {
     if (el) el.innerHTML = categories.map(c =>
         `<li><a href="#productos" onclick="filterByCategory('${c.id}')">${c.name}</a></li>`).join('');
 }
-
-
 function renderFilterButtons() {
     const buttons = categories.map(cat =>
         `<button class="filter-btn" data-category="${cat.id}" onclick="filterByCategory('${cat.id}')">${cat.name}</button>`
     ).join('');
     filterButtons.innerHTML = `<button class="filter-btn active" data-category="all" onclick="filterByCategory('all')">Todos</button>${buttons}`;
 }
-
 function filterByCategory(categoryId) {
     document.querySelectorAll('.filter-btn').forEach(btn =>
         btn.classList.toggle('active', btn.dataset.category === categoryId));
@@ -762,15 +757,32 @@ function filterByCategory(categoryId) {
     renderProducts(filtered);
 }
 
-
+// ─── PRODUCTS GRID ────────────────────────────────────────────────────────────
 function renderProducts(productsToRender = products) {
     productsGrid.innerHTML = productsToRender.map(product => {
-        const firstPrice = Object.values(product.prices)[0];
+        const sizes = Object.keys(product.prices);
+        const firstPrice = product.prices[sizes[0]];
+        const sizeImgs = getProductImages(product);
+
+        // Thumbnails row — one per size/presentation
+        const thumbsHtml = sizeImgs.map(({ size, label, src }) => `
+            <div class="card-thumb-item" title="${label}">
+                <img src="${src}"
+                     alt="${product.name} ${label}"
+                     onerror="this.src='${PLACEHOLDER}'"
+                     loading="lazy">
+                <span>${label}</span>
+            </div>`).join('');
+
         return `
         <div class="product-card" onclick="openProductModal(${product.id})">
             ${product.badge ? `<span class="product-badge ${product.badge}">${product.badge === 'new' ? 'Nuevo' : product.badge}</span>` : ''}
             <div class="product-image">
-                <img src="${product.images[0]}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop'">
+                <img src="${getFirstImage(product)}" alt="${product.name}"
+                     onerror="this.src='${PLACEHOLDER}'" loading="lazy">
+            </div>
+            <div class="card-size-thumbs">
+                ${thumbsHtml}
             </div>
             <div class="product-info">
                 <span class="product-category">${getCategoryName(product.category)}</span>
@@ -789,26 +801,35 @@ function getCategoryName(categoryId) {
     return cat ? cat.name : categoryId;
 }
 
-
+// ─── PRODUCT MODAL ────────────────────────────────────────────────────────────
 function openProductModal(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
-    const defaultSize = Object.keys(product.prices)[0];
+
+    const sizeImgs   = getProductImages(product);
+    const defaultSize = sizeImgs[0].size;
+    const defaultImg  = sizeImgs[0].src;
 
     productModalContent.innerHTML = `
         <div class="product-modal-grid">
             <div class="product-modal-gallery">
                 <div class="gallery-main" id="galleryMain">
-                    <img src="${product.images[0]}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop'">
+                    <img src="${defaultImg}" alt="${product.name}"
+                         onerror="this.src='${PLACEHOLDER}'">
                 </div>
-                <div class="gallery-thumbs">
-                    ${product.images.map((img, i) => `
-                        <div class="thumb ${i === 0 ? 'active' : ''}" onclick="changeGalleryImage('${img}', this)">
-                            <img src="${img}" alt="Imagen ${i+1}" onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=80&q=60'">
+                <div class="gallery-thumbs" id="galleryThumbs">
+                    ${sizeImgs.map(({ size, label, src }, i) => `
+                        <div class="thumb ${i === 0 ? 'active' : ''}"
+                             data-size="${size}"
+                             onclick="switchModalImage('${src}', '${size}', ${product.id}, this)">
+                            <img src="${src}" alt="${label}"
+                                 onerror="this.src='${PLACEHOLDER}'">
+                            <span class="thumb-label">${label}</span>
                         </div>`).join('')}
                     ${product.video ? `
-                        <div class="thumb thumb-video" onclick="playVideo('${product.video}',this)">
+                        <div class="thumb thumb-video" onclick="playVideo('${product.video}', this)">
                             <video src="${product.video}" muted></video>
+                            <span class="thumb-label">Video</span>
                         </div>` : ''}
                 </div>
             </div>
@@ -828,10 +849,10 @@ function openProductModal(productId) {
                 <div class="size-selector">
                     <h4>Selecciona el tamaño:</h4>
                     <div class="size-options" id="sizeOptions">
-                        ${Object.entries(product.prices).map(([size, price]) => `
-                            <div class="size-option ${size === defaultSize ? 'active' : ''}"
+                        ${Object.entries(product.prices).map(([size, price], i) => `
+                            <div class="size-option ${i === 0 ? 'active' : ''}"
                                  data-size="${size}" data-price="${price}"
-                                 onclick="selectSize('${size}',${price},${product.id})">
+                                 onclick="selectSize('${size}', ${price}, ${product.id})">
                                 <div class="size-icon">${sizeIcons[size] || sizeIcons['1L']}</div>
                                 <span class="size-label">${sizeLabels[size] || size}</span>
                                 <span class="size-price">$${formatPrice(price)}</span>
@@ -867,17 +888,36 @@ function openProductModal(productId) {
     productModal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
 function closeProductModalFn() {
     productModal.classList.remove('active');
     document.body.style.overflow = '';
 }
+
+// Called when clicking a size thumb in the modal — changes the main image AND selects the size
+function switchModalImage(src, size, productId, thumbEl) {
+    document.getElementById('galleryMain').innerHTML =
+        `<img src="${src}" alt="Producto" onerror="this.src='${PLACEHOLDER}'">`;
+    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+    thumbEl.classList.add('active');
+
+    // Also update the size selector
+    const product = products.find(p => p.id === productId);
+    if (product && product.prices[size] !== undefined) {
+        selectSize(size, product.prices[size], productId);
+    }
+}
+
 function changeGalleryImage(src, thumb) {
-    document.getElementById('galleryMain').innerHTML = `<img src="${src}" alt="Producto" onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop'">`;
+    document.getElementById('galleryMain').innerHTML =
+        `<img src="${src}" alt="Producto" onerror="this.src='${PLACEHOLDER}'">`;
     document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');
 }
+
 function playVideo(src, thumb) {
-    document.getElementById('galleryMain').innerHTML = `<video src="${src}" controls autoplay></video>`;
+    document.getElementById('galleryMain').innerHTML =
+        `<video src="${src}" controls autoplay></video>`;
     document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
     thumb.classList.add('active');
 }
@@ -886,7 +926,8 @@ let selectedSize  = '1L';
 let selectedPrice = 0;
 
 function selectSize(size, price, productId) {
-    selectedSize = size; selectedPrice = price;
+    selectedSize  = size;
+    selectedPrice = price;
     document.querySelectorAll('.size-option').forEach(opt =>
         opt.classList.toggle('active', opt.dataset.size === size));
     const iva   = price * IVA_RATE;
@@ -897,7 +938,7 @@ function selectSize(size, price, productId) {
 }
 
 function addToCartFromModal(productId) {
-    const product   = products.find(p => p.id === productId);
+    const product    = products.find(p => p.id === productId);
     if (!product) return;
     const activeSize = document.querySelector('.size-option.active');
     const size  = activeSize ? activeSize.dataset.size : Object.keys(product.prices)[0];
@@ -906,6 +947,7 @@ function addToCartFromModal(productId) {
     closeProductModalFn();
     openCart();
 }
+
 function quickAddToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -914,7 +956,7 @@ function quickAddToCart(productId) {
     openCart();
 }
 
-
+// ─── CART ─────────────────────────────────────────────────────────────────────
 function addToCart(productId, size, price) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -923,10 +965,12 @@ function addToCart(productId, size, price) {
     else cart.push({ productId, size, price, quantity: 1 });
     updateCartUI();
 }
+
 function removeFromCart(productId, size) {
     cart = cart.filter(i => !(i.productId === productId && i.size === size));
     updateCartUI();
 }
+
 function updateQuantity(productId, size, delta) {
     const item = cart.find(i => i.productId === productId && i.size === size);
     if (item) {
@@ -960,7 +1004,9 @@ function updateCartUI() {
         return `
         <div class="cart-item">
             <div class="cart-item-image">
-                <img src="${product.images[0]}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=80&q=60'">
+                <img src="${(product.imagesBySize && product.imagesBySize[item.size]) || getFirstImage(product)}"
+                     alt="${product.name}"
+                     onerror="this.src='${PLACEHOLDER}'">
             </div>
             <div class="cart-item-info">
                 <div class="cart-item-code">[${productCode}]</div>
@@ -995,10 +1041,10 @@ function updateCartUI() {
         <button class="btn btn-primary btn-full" onclick="openCheckoutModal()">Proceder al Pago</button>`;
 }
 
-function openCart()       { cartDrawer.classList.add('active'); cartOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
-function closeCartDrawer(){ cartDrawer.classList.remove('active'); cartOverlay.classList.remove('active'); document.body.style.overflow=''; }
+function openCart()        { cartDrawer.classList.add('active'); cartOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+function closeCartDrawer() { cartDrawer.classList.remove('active'); cartOverlay.classList.remove('active'); document.body.style.overflow = ''; }
 
-
+// ─── CHECKOUT ─────────────────────────────────────────────────────────────────
 function openCheckoutModal() {
     closeCartDrawer();
     const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
@@ -1012,7 +1058,7 @@ function openCheckoutModal() {
                 const p    = products.find(x => x.id === item.productId);
                 const code = p.codes[item.size];
                 return `<div class="checkout-item">
-                    <span class="checkout-item-name">[${code}] ${p.name} (${sizeLabels[item.size]||item.size}) x${item.quantity}</span>
+                    <span class="checkout-item-name">[${code}] ${p.name} (${sizeLabels[item.size] || item.size}) x${item.quantity}</span>
                     <span class="checkout-item-price">$${formatPrice(item.price * item.quantity)}</span>
                 </div>`;
             }).join('')}
@@ -1026,11 +1072,12 @@ function openCheckoutModal() {
     checkoutModal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-function closeCheckoutModalFn() { checkoutModal.classList.remove('active'); document.body.style.overflow=''; }
+
+function closeCheckoutModalFn() { checkoutModal.classList.remove('active'); document.body.style.overflow = ''; }
 
 function handleCheckout(e) {
     e.preventDefault();
-    const formData  = new FormData(checkoutFormEl);
+    const formData = new FormData(checkoutFormEl);
     const data = {
         nombre:      formData.get('nombre'),
         cedula:      formData.get('cedula'),
@@ -1047,7 +1094,7 @@ function handleCheckout(e) {
     const iva      = subtotal * IVA_RATE;
     const total    = subtotal + iva;
 
-    let message  = `🍽️ *NUEVO PEDIDO - CLEANCHEF PRO*\n\n`;
+    let message  = `🍽️ *NUEVO PEDIDO - TAHOR CLEAN*\n\n`;
         message += `*DATOS DEL CLIENTE*\n`;
         message += `Nombre: ${data.nombre}\n`;
         message += `Cédula/RUC: ${data.cedula}\n`;
@@ -1063,7 +1110,7 @@ function handleCheckout(e) {
         const p         = products.find(x => x.id === item.productId);
         const itemTotal = item.price * item.quantity;
         const code      = p.codes[item.size];
-        message += `- [${code}] ${p.name} (${sizeLabels[item.size]||item.size}) x${item.quantity} = $${formatPrice(itemTotal)}\n`;
+        message += `- [${code}] ${p.name} (${sizeLabels[item.size] || item.size}) x${item.quantity} = $${formatPrice(itemTotal)}\n`;
     });
 
     message += `\n*RESUMEN*\n`;
@@ -1072,7 +1119,7 @@ function handleCheckout(e) {
     message += `*TOTAL: $${formatPrice(total)}*\n\n`;
     message += `Gracias por su pedido 🙌`;
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER.replace('+','')}?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}?text=${encodeURIComponent(message)}`, '_blank');
     cart = [];
     updateCartUI();
     closeCheckoutModalFn();
@@ -1080,18 +1127,20 @@ function handleCheckout(e) {
     alert('¡Tu pedido ha sido enviado por WhatsApp! Te contactaremos pronto.');
 }
 
-
+// ─── UTILS ────────────────────────────────────────────────────────────────────
 function formatPrice(price) {
-    return Number(price).toLocaleString('es-EC', { minimumFractionDigits:2, maximumFractionDigits:2 });
+    return Number(price).toLocaleString('es-EC', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-window.openProductModal    = openProductModal;
-window.changeGalleryImage  = changeGalleryImage;
-window.playVideo           = playVideo;
-window.selectSize          = selectSize;
-window.addToCartFromModal  = addToCartFromModal;
-window.quickAddToCart      = quickAddToCart;
-window.updateQuantity      = updateQuantity;
-window.removeFromCart      = removeFromCart;
-window.openCheckoutModal   = openCheckoutModal;
-window.filterByCategory    = filterByCategory;
+// ─── GLOBALS (called from inline HTML) ───────────────────────────────────────
+window.openProductModal     = openProductModal;
+window.switchModalImage     = switchModalImage;
+window.changeGalleryImage   = changeGalleryImage;
+window.playVideo            = playVideo;
+window.selectSize           = selectSize;
+window.addToCartFromModal   = addToCartFromModal;
+window.quickAddToCart       = quickAddToCart;
+window.updateQuantity       = updateQuantity;
+window.removeFromCart       = removeFromCart;
+window.openCheckoutModal    = openCheckoutModal;
+window.filterByCategory     = filterByCategory;

@@ -854,3 +854,115 @@
             .checkout-form { padding:1rem; }
             .checkout-header { padding:1rem 1rem 0; }
         }
+
+       /* ─── CARD thumbnails: hidden on the product card ───────────────────────────── */
+.card-size-thumbs { display: none; }
+
+/* ─── PRODUCT CARD IMAGE ─────────────────────────────────────────────────────── */
+.product-image {
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 16px;
+    mix-blend-mode: multiply;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* ─── MODAL GALLERY MAIN IMAGE ───────────────────────────────────────────────── */
+.gallery-main {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+    height: 280px;
+    margin-bottom: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+    mix-blend-mode: multiply;
+}
+
+.gallery-main video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ─── MODAL GALLERY THUMBS WITH SIZE LABEL ──────────────────────────────────── */
+.gallery-thumbs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.thumb {
+    width: 68px;
+    min-width: 68px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    transition: border-color 0.2s, transform 0.15s;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.thumb.active,
+.thumb:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.thumb img,
+.thumb video {
+    width: 100%;
+    height: 52px;
+    object-fit: contain;
+    padding: 4px;
+    mix-blend-mode: multiply;
+    background: #f5f5f5;
+}
+
+.thumb-label {
+    display: block;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 3px 4px 4px;
+    width: 100%;
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thumb.active .thumb-label {
+    color: var(--primary-light);
+}
+
+/* ─── Quitar el degradado oscuro sobre la imagen de la tarjeta ─────────────── */
+.product-image::after {
+    display: none;
+}
