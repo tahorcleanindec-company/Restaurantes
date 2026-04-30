@@ -197,15 +197,15 @@
  
         .slide:nth-child(1) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.75) 0%,rgba(30,15,5,.65) 100%),
-                        url('img/woman-holding-rag-detergent-cleaning-cooker.jpg') center/cover !important;
+                        url('img/limpieza.webp') center/cover !important;
         }
         .slide:nth-child(2) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.78) 0%,rgba(10,25,15,.65) 100%),
-                        url('img/closeup-hand-glove-cleaning-table-with-foam-detergent.jpg') center/cover !important;
+                        url('img/potencia.webp') center/cover !important;
         }
         .slide:nth-child(3) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.75) 0%,rgba(20,10,5,.68) 100%),
-                        url('img/industrial-worker-with-protective-mask-white-uniform-holding-plastic-cans-chemical-industry.jpg') center/cover !important;
+                        url('img/protocolos.webp') center/cover !important;
         }
  
         .slide-content {
