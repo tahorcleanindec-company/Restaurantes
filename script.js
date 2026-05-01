@@ -369,9 +369,9 @@ const products = [
         longDescription: 'Limpieza rápida de cristales y vitrinas.',
         features: ['Sin rayas', 'Secado rápido', 'Cristalino', 'Fácil aplicación'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/limpiavidrios.webp',
+            'galon': 'img/limpiavidriosgl.webp',
+            'caneca':'img/limpiavidrioca.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
