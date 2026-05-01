@@ -1,10 +1,10 @@
 const categories = [
     { id: 'desengrasantes_de_cocina',      name: 'Desengrasantes de cocina',        icon: '🔥' },
     { id: 'desinfecion_y_sanitizacion',    name: 'Desinfección y sanitización',     icon: '🍽️' },
-    { id: 'higiene_de_manos',              name: 'Higiene de manos',                icon: '🛡️' },
-    { id: 'multiusos',                     name: 'Multiusos',                       icon: '🤲' },
     { id: 'lavado_de_vajilla_y_utensilios',name: 'Lavado de vajilla y utensilios',  icon: '🤲' },
     { id: 'desincrustantes_y_acidos',      name: 'Desincrustantes y ácidos',        icon: '⚗️' },
+    { id: 'multiusos',                     name: 'Multiusos',                       icon: '🤲' },
+    { id: 'higiene_de_manos',              name: 'Higiene de manos',                icon: '🛡️' },
 ];
 
 
@@ -44,9 +44,9 @@ const products = [
         longDescription: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
         features: ['Elimina grasa pesada', 'Acción rápida', 'Reduce esfuerzo'],
         imagesBySize: {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/deter100plusL.webp',
+            'galon': 'img/deter100plusG.webp',
+            'caneca':'img/deter100plusC.webp',
             },
 
 
@@ -216,9 +216,9 @@ const products = [
         longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
         features: ['Alta capacidad desincrustante', 'Limpieza profunda', 'Resultados visibles'],
         imagesBySize: {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/tahox100 gl.webp',
+            'galon': 'img/tahox100 gl.webp',
+            'caneca':'img/Tahox100ca.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
@@ -335,8 +335,8 @@ const products = [
         longDescription: 'Limpiador y desinfectante con agradable aroma. Ligeramente viscoso.',
         features: ['Limpia y desinfecta', 'Aroma agradable', 'Viscoso', 'Uso profesional'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
+            '1L':    'img/SeguriCleanLmanzana.webp',
+            'galon': 'img/Seguricleangl.webp',
             'caneca':'img/',
             },
         video: null,
@@ -386,9 +386,9 @@ const products = [
         longDescription: 'APC (Limpieza Multiusos) (All Purpose Cleaner) listo para usar.',
         features: ['Listo para usar', 'Multiusos', 'Alta eficacia', 'Sin diluir'],
         imagesBySize:  {
-            '1L':    'img/',
+            '1L':    'img/intahorl.webp',
             'galon': 'img/',
-            'caneca':'img/',
+            'caneca':'img/intahorl.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
@@ -428,8 +428,8 @@ const products = [
             'caneca':'img/',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 1.9, 'galon': 4.90, 'caneca': 21 },
+        codes:  { '1L': '35915', 'galon': '56267', 'caneca': '56269' },
         badge: ''
     },
     {
@@ -445,8 +445,8 @@ const products = [
             'caneca':'img/',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.50, 'galon': 8.69, 'caneca': 32.117 },
+        codes:  { '1L': '56234', 'galon': '54028', 'caneca': '51187' },
         badge: ''
     },
     {
@@ -462,8 +462,8 @@ const products = [
             'caneca':'img/35922 TAHOR WASH 20L.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.15, 'galon': 9.50, 'caneca': 47.82 },
+        codes:  { '1L': '50367', 'galon': '35921', 'caneca': '35922' },
         badge: ''
     },
     {
@@ -525,9 +525,9 @@ const products = [
         longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
         features: ['Alta capacidad desincrustante', 'Limpieza profunda', 'Resultados visibles'],
         imagesBySize: {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/Tahox100L.webp',
+            'galon': 'img/tahox100 gl.webp',
+            'caneca':'img/Tahox100ca.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
