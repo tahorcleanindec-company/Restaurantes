@@ -32,8 +32,8 @@ const products = [
             'caneca':'img/',
         },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.18, 'galon': 7.4, 'caneca': 34.7 },
+        codes:  { '1L': '45425', 'galon': '35852', 'caneca': '35854' },
         badge: ''
     },
     {
@@ -255,8 +255,8 @@ const products = [
             'caneca':'img/jabonliquidojdmc.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.17, 'galon': 6.19, 'caneca': 27.00 },
+        codes:  { '1L': '35888', 'galon': '35891', 'caneca': '35982' },
         badge: ''
     },
     {
@@ -267,7 +267,7 @@ const products = [
         longDescription: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
         features: ['pH balanceado', 'Humectante', 'Aroma agradable', 'Uso diario'],
         imagesBySize:  {
-            '1L':    'img/',
+            '1L':    'img/jabonliquido.jpeg',
             'galon': 'img/DETER HIPOALARGENICO GBR.webp',
             'caneca':'img/soap.webp',
             },
@@ -289,8 +289,8 @@ const products = [
             'caneca':'img/gelc.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.99, 'galon': 9.75, 'caneca': 45.00 },
+        codes:  { '1L': '40072', 'galon': '40075', 'caneca': '41066' },
         badge: ''
     },
     {
@@ -318,13 +318,13 @@ const products = [
         longDescription: 'Poderoso limpiador para higiene impecable eliminando el 99.9% de gérmenes y bacterias, sino un baño resplandeciente y una fragancia duradera, garantizando un ambiente fresco y libre de impurezas con cada uso.',
         features: ['99.9% efectividad', 'Fragancia duradera', 'Multiusos', 'Profesional'],
         imagesBySize:  {
-            '1L':    'img/',
+            '1L':    'img/seguriclean1l.webp',
             'galon': 'img/59212 SEGURICELAN BAÑO.webp',
-            'caneca':'img/59212 SEGURICELAN BAÑO.webp',
+            'caneca':'img/59267 SEGURICLEAN BAÑO 20L (3).webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.60, 'galon': 8.26, 'caneca': 37.40 },
+        codes:  { '1L': '61046', 'galon': '59212', 'caneca': '59267' },
         badge: ''
     },
     {
@@ -391,8 +391,8 @@ const products = [
             'caneca':'img/intahorl.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.40, 'galon': 7.50, 'caneca': 30.50 },
+        codes:  { '1L': '63429', 'galon': '63428', 'caneca': '63386' },
         badge: ''
     },
     {
@@ -477,23 +477,6 @@ const products = [
             '1L':    'img/detercleanlitro.webp',
             'galon': 'img/detercleangalon.webp',
             'caneca':'img/detercleancaneca.webp',
-            },
-        video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
-        badge: ''
-    },
-    {
-        id: 28,
-        name: 'ÁCIDO SANITIZANTE',
-        category: 'desincrustantes_y_acidos',
-        description: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
-        longDescription: 'Limpiador ácido que elimina sarro y desinfecta superficies en contacto indirecto con alimentos.',
-        features: ['Elimina incrustaciones', 'Acción desinfectante', 'Mejora higiene'],
-        imagesBySize: {
-            '1L':    'img/acidosanitizante1l.webp',
-            'galon': 'img/35857 ACIDO ZANITIZANTE GLB.webp',
-            'caneca':'img/35658 AC SANITIZANTE 20L.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
