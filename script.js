@@ -51,8 +51,8 @@ const products = [
 
 
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.18, 'galon': 4.99, 'caneca': 19 },
+        codes:  { '1L': '56238', 'galon': '56238', 'caneca': '36005' },
         badge: ''
     },
     {
@@ -68,8 +68,8 @@ const products = [
             'caneca':'img/Deter100proc.webp',
         },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.05, 'galon': 9, 'caneca': 39.2 },
+        codes:  { '1L': '45088', 'galon': '54167', 'caneca': '59228' },
         badge: ''
     },
     {
@@ -85,8 +85,8 @@ const products = [
             'caneca':'img/35824 DET CLORADO 20L.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.18, 'galon': 5.7, 'caneca': 24 },
+        codes:  { '1L': '42286', 'galon': '35823', 'caneca': '35824' },
         badge: ''
     },
     {
@@ -97,12 +97,12 @@ const products = [
         longDescription: 'Detergente espumante neutro con peróxido de hidrógeno.',
         features: ['Espumante neutro', 'Peróxido de hidrógeno', 'Alta eficacia', 'Seguro'],
         imagesBySize: {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/deter100removerlitro.webp',
+            'galon': 'img/deter100removergalon.webp',
+            'caneca':'img/deter100removercaneca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        prices: { '1L': 3, 'galon': 10, 'caneca': 43 },
         codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
@@ -114,12 +114,12 @@ const products = [
         longDescription: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
         features: ['Remueve grasa quemada', 'Ideal para parrillas', 'Limpieza profunda'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/detergrilllitro.webp',
+            'galon': 'img/detergrillgalon.webp',
+            'caneca':'img/detergrillcaneca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        prices: { '1L': 3.3, 'galon': 11, 'caneca': 49 },
         codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
@@ -131,12 +131,12 @@ const products = [
         longDescription: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
         features: ['Destapa tuberías rápidamente', 'Disuelve grasa sólida', 'Previene obstrucciones'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/destapadorcleanlitro.webp',
+            'galon': 'img/destapadorcleangalon.webp',
+            'caneca':'img/destapadorcleancaneca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        prices: { '1L': 3, 'galon': 10, 'caneca': 40 },
         codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
@@ -153,8 +153,8 @@ const products = [
             'caneca':'img/35658 SANITIZER 20L.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.26, 'galon': 10, 'caneca': 39.99 },
+        codes:  { '1L': '35954', 'galon': '35955', 'caneca': '35956' },
         badge: ''
     },
     {
@@ -170,8 +170,8 @@ const products = [
             'caneca':'img/46730 OXIQUATS 20L.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.5, 'galon': 11, 'caneca': 45 },
+        codes:  { '1L': '47925', 'galon': '48085', 'caneca': '46730' },
         badge: ''
     },
     {
@@ -187,8 +187,8 @@ const products = [
             'caneca':'img/36971 SANIBAT 20L.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.5, 'galon': 9, 'caneca': 37 },
+        codes:  { '1L': '35968', 'galon': '45623', 'caneca': '35971' },
         badge: ''
     },
     {
@@ -204,8 +204,8 @@ const products = [
             'caneca':'img/Dioxigenpro.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3, 'galon': 7.5, 'caneca': 34.7 },
+        codes:  { '1L': '42244', 'galon': '56526', 'caneca': '56786' },
         badge: ''
     },
     {
@@ -221,8 +221,8 @@ const products = [
             'caneca':'img/Tahox100ca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 4, 'galon': 13.5, 'caneca': 57.1 },
+        codes:  { '1L': '49748', 'galon': '35943', 'caneca': '52607' },
         badge: ''
     },
     {
@@ -238,8 +238,8 @@ const products = [
             'caneca':'img/cloro50C.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 7.99 },
+        codes:  { '1L': 'DG-001', 'galon': '35756', 'caneca': '38864' },
         badge: ''
     },
     {
@@ -411,7 +411,7 @@ const products = [
            
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
+        prices: { '1L': 1.99, 'galon': 5, 'caneca': 21.9 },
         codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
         badge: ''
     },
@@ -474,9 +474,9 @@ const products = [
         longDescription: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
         features: ['Limpieza eficiente en máquina', 'Evita manchas en vajilla', 'Alto rendimiento'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/detercleanlitro.webp',
+            'galon': 'img/detercleangalon.webp',
+            'caneca':'img/detercleancaneca.webp',
             },
         video: null,
         prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
