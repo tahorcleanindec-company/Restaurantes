@@ -441,8 +441,7 @@ const products = [
         features: ['Sin aroma (uso alimentario seguro)', 'Alta eficiencia de limpieza', 'Ideal para uso profesional'],
         imagesBySize:  {
             '1L':    'img/tahorwashrL.webp',
-            'galon': 'img/',
-            'caneca':'img/',
+            'caneca':'img/TAHOR WAS CANECA.webp',
             },
         video: null,
         prices: { '1L': 2.50, 'galon': 8.69, 'caneca': 32.117 },
