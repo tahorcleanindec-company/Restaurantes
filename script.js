@@ -478,8 +478,8 @@ const products = [
             'caneca':'img/detercleancaneca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.50, 'galon': 11.50, 'caneca': 45 },
+        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': '41745' },
         badge: ''
     },
     {
