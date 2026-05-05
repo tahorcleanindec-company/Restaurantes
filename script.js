@@ -22,7 +22,7 @@ const products = [
     {
         id: 1,
         name: 'DETER 100',
-        subname: 'Desengrasante Espumoso',
+        subname: 'Espuma rápida contra grasa diaria',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
         longDescription: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
@@ -40,7 +40,7 @@ const products = [
     {
         id: 2,
         name: 'DETER PLUS',
-        subname: 'Desengrasante Multiuso',
+        subname: 'Potencia multiuso contra grasa',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
         longDescription: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
@@ -60,7 +60,7 @@ const products = [
     {
         id: 3,
         name: 'DETER PRO',
-        subname: 'Desengrasante Concentrado',
+        subname: 'Concentrado para grasa pesada',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante alcalino concentrado, pH 13, espuma media. Para limpieza profunda y todo tipo de grasa penetrada. Grado alimenticio.',
         longDescription: 'Desengrasante alcalino concentrado, pH 13, espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
@@ -78,6 +78,7 @@ const products = [
     {
         id: 4,
         name: 'DETER 100 CLORADO',
+        subname: 'Limpia y desinfecta en uno',
         category: 'desengrasantes_de_cocina',
         description: 'Detergente desengrasante desinfectante, efectivo para la remoción de proteínas y grasas.',
         longDescription: 'Detergente desengrasante desinfectante, efectivo para la remoción de proteínas y grasas.',
@@ -95,6 +96,7 @@ const products = [
     {
         id: 5,
         name: 'DETER 100 REMOVER',
+        subname: 'Remueve suciedad profunda',
         category: 'desengrasantes_de_cocina',
         description: 'Detergente espumante neutro con peróxido de hidrógeno.',
         longDescription: 'Detergente espumante neutro con peróxido de hidrógeno.',
@@ -112,6 +114,7 @@ const products = [
     {
         id: 6,
         name: 'DETER GRILL',
+        subname: 'Arranca grasa carbonizada',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
         longDescription: 'Desengrasante especializado para parrillas y superficies calientes, elimina grasa carbonizada.',
@@ -129,6 +132,7 @@ const products = [
     {
         id: 7,
         name: 'DESTAPADOR CLEAN (SODA 20%)',
+        subname: 'Destapa y disuelve grasa',
         category: 'desengrasantes_de_cocina',
         description: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
         longDescription: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
@@ -146,6 +150,7 @@ const products = [
     {
         id: 8,
         name: 'SANITIZER TC',
+        subname: 'Sanitiza rápido y eficaz',
         category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante oxidante de alto nivel para superficies y equipos.',
         longDescription: 'Desinfectante oxidante de alto nivel para superficies y equipos.',
@@ -162,7 +167,8 @@ const products = [
     },
     {
         id: 9,
-        name: 'OXIQUATS',
+        name: 'OXIQUATS',      
+        subname: 'Desinfección doble acción',
         category: 'desinfecion_y_sanitizacion',
         description: 'Combinación de peróxido y amonios para desinfección avanzada.',
         longDescription: 'Combinación de peróxido y amonios para desinfección avanzada.',
@@ -180,6 +186,7 @@ const products = [
     {
         id: 10,
         name: 'SANIBAT',
+        subname: 'Desinfección confiable diaria',
         category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante de amonio cuaternario para superficies generales en cocina.',
         longDescription: 'Desinfectante de amonio cuaternario para superficies generales en cocina.',
@@ -197,6 +204,7 @@ const products = [
     {
         id: 11,
         name: 'DIOXIGEN PRO',
+        subname: 'Elimina bacterias y olores',
         category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante potente para control de bacterias y eliminación de olores en superficies y drenajes.',
         longDescription: 'Desinfectante potente para control de bacterias y eliminación de olores en superficies y drenajes.',
@@ -214,6 +222,7 @@ const products = [
     {
         id: 12,
         name: 'TAHOX 100',
+        subname: 'Desincrusta sarro y óxido',
         category: 'desinfecion_y_sanitizacion',
         description: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
         longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
@@ -231,6 +240,7 @@ const products = [
     {
         id: 13,
         name: 'CLORO 50 ',
+        subname: 'Desinfección profunda',
         category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
         longDescription: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
@@ -247,6 +257,7 @@ const products = [
     {
         id: 14,
         name: 'JDM',
+        subname: 'Higiene de manos eficaz',
         category: 'higiene_de_manos',
         description: 'Jabón para lavado frecuente de manos en entornos de manipulación de alimentos.',
         longDescription: 'Jabón para lavado frecuente de manos en entornos de manipulación de alimentos.',
@@ -264,6 +275,7 @@ const products = [
     {
         id: 15,
         name: 'JABÓN LÍQUIDO CON AROMA',
+        subname: 'Limpia y perfuma',
         category: 'higiene_de_manos',
         description: 'Jabón líquido de uso doméstico e institucional. Tensioactivos + humectantes + pH balanceado.',
         longDescription: 'Jabón líquido de uso doméstico e institucional, higiene adecuado. Contiene tensioactivos que desprenden la suciedad, agentes humectantes que mantienen la piel hidratada y un pH balanceado para cuidar las manos en cada lavado.',
@@ -281,6 +293,7 @@ const products = [
     {
         id: 16,
         name: 'ALCOHOL GEL',
+        subname: 'Higiene sin agua',
         category: 'higiene_de_manos',
         description: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
         longDescription: 'Desinfectante para manos de acción rápida sin necesidad de enjuague.',
@@ -298,6 +311,7 @@ const products = [
     {
         id: 17,
         name: 'ALCOHOL ANTISÉPTICO',
+        subname: 'Desinfección inmediata',
         category: 'higiene_de_manos',
         description: 'Alcohol líquido al 70%.',
         longDescription: 'Alcohol líquido al 70%.',
@@ -316,6 +330,7 @@ const products = [
     {
         id: 18,
         name: 'SEGURICLEAN',
+        subname: 'Limpia y desinfecta',
         category: 'multiusos',
         description: 'Poderoso limpiador que elimina el 99.9% de gérmenes y bacterias. Fragancia duradera.',
         longDescription: 'Poderoso limpiador para higiene impecable eliminando el 99.9% de gérmenes y bacterias, sino un baño resplandeciente y una fragancia duradera, garantizando un ambiente fresco y libre de impurezas con cada uso.',
@@ -333,6 +348,7 @@ const products = [
     {
         id: 19,
         name: 'SEGURICLEAN DESINFECTANTE',
+        subname: 'Desinfección con aroma',
         category: 'multiusos',
         description: 'Limpiador y desinfectante con agradable aroma. Ligeramente viscoso.',
         longDescription: 'Limpiador y desinfectante con agradable aroma. Ligeramente viscoso.',
@@ -350,6 +366,7 @@ const products = [
     {
         id: 20,
         name: 'ELIMINADOR DE OLORES',
+        subname: 'Aromatización por más tiempo',
         category: 'multiusos',
         description: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente con mezcla de fragancias.',
         longDescription: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente, con una mezcla de fragancias dejando una sensación de higiene y limpieza.',
@@ -367,6 +384,7 @@ const products = [
     {
         id: 21,
         name: 'LIMPIA VIDRIOS',
+        subname: 'Brillo sin marcas en segundos',
         category: 'multiusos',
         description: 'Limpieza rápida de cristales y vitrinas.',
         longDescription: 'Limpieza rápida de cristales y vitrinas.',
@@ -384,6 +402,7 @@ const products = [
     {
         id: 22,
         name: 'IN-TAHOR',
+        subname: 'Limpieza rápida para todo tipo de superficies',
         category: 'multiusos',
         description: 'APC (All Purpose Cleaner) — Limpiador Multiusos listo para usar.',
         longDescription: 'APC (Limpieza Multiusos) (All Purpose Cleaner) listo para usar.',
@@ -401,6 +420,7 @@ const products = [
     {
         id: 23,
         name: 'LAVAVAJILLAS CON AROMA',
+        subname: ' Elimina grasa y deja frescura',
         category: 'lavado_de_vajilla_y_utensilios',
         description: 'Detergente líquido para vajilla que elimina grasa y suciedad. Aroma agradable, ideal para cocinas de alto movimiento.',
         longDescription: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
@@ -418,6 +438,7 @@ const products = [
     {
         id: 24,
         name: 'LAVAVAJILLAS NEUTRO',
+        subname: 'Limpieza suave y efectiva diaria',
         category: 'lavado_de_vajilla_y_utensilios',
         description: 'Detergente suave de pH neutro para limpieza segura de vajilla y utensilios. No deja residuos ni olores.',
         longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
@@ -435,6 +456,7 @@ const products = [
     {
         id: 25,
         name: 'TAHOR WASH R',
+        subname: 'Potencia sin aroma para uso profesional',
         category: 'lavado_de_vajilla_y_utensilios',
         description: 'Detergente concentrado sin aroma para lavado de utensilios y superficies en cocinas profesionales.',
         longDescription: 'Detergente concentrado sin aroma para lavado de utensilios y superficies. Diseñado para cocinas profesionales donde se requiere limpieza efectiva sin interferir con alimentos.',
@@ -451,6 +473,7 @@ const products = [
     {
         id: 26,
         name: 'TAHOR WASH (ALTA ESPUMA)',
+        subname: 'Espuma activa que arranca la grasa',
         category: 'lavado_de_vajilla_y_utensilios',
         description: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios.',
         longDescription: 'Detergente de alta espuma ideal para limpieza manual en cocinas y utensilios. Proporciona mayor cobertura y facilita la remoción de grasa.',
@@ -468,6 +491,7 @@ const products = [
     {
         id: 27,
         name: 'DETER CLEAN (LAVAVAJILLAS AUTOMÁTICO)',
+        subname: 'Limpieza profunda sin residuos',
         category: 'lavado_de_vajilla_y_utensilios',
         description: 'Detergente especializado para máquinas lavavajillas industriales. Elimina grasa sin manchas ni velos.',
         longDescription: 'Detergente especializado para máquinas lavavajillas industriales, diseñado para eliminar grasa y residuos sin dejar manchas ni velos.',
@@ -485,6 +509,7 @@ const products = [
     {
         id: 29,
         name: 'ACIMUR',
+        subname: 'Elimina sarro e incrustaciones difíciles',
         category: 'desincrustantes_y_acidos',
         description: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
         longDescription: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
@@ -502,6 +527,7 @@ const products = [
     {
         id: 30,
         name: 'TAHOX 100 (ÁCIDO)',
+        subname: 'Desincrusta y limpia a fondo',
         category: 'desincrustantes_y_acidos',
         description: 'Desincrustante ácido de alto rendimiento para limpieza profunda con acumulación mineral.',
         longDescription: 'Desincrustante ácido de alto rendimiento para limpieza profunda en superficies con acumulación mineral.',
@@ -519,6 +545,7 @@ const products = [
     {
         id: 31,
         name: 'NITRI TC PLUS',
+        subname: 'Ataque fuerte contra incrustaciones',
         category: 'desincrustantes_y_acidos',
         description: 'Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
         longDescription: 'Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
