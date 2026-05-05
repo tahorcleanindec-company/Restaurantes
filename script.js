@@ -403,12 +403,9 @@ const products = [
         longDescription: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
         features: ['Remueve grasa fácilmente', 'Deja aroma agradable', 'Ideal para uso frecuente'],
         imagesBySize:  {
-            '1L':'img/lavavajillas presentacioness.jpg',
-            'galon':'img/lavavajillas presentaciones.jpg',
-
-
-
-           
+            '1L':    'img/lavavajillaslt.webp',
+            'galon': 'img/lavavajillasgl.webp',
+            'caneca':'img/lavavajillascane.webp',
             },
         video: null,
         prices: { '1L': 1.99, 'galon': 5, 'caneca': 21.9 },
@@ -423,9 +420,9 @@ const products = [
         longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
         features: ['Seguro para superficies alimentarias', 'No deja residuos', 'Cuida manos y utensilios'],
         imagesBySize:  {
-            '1L':    'img/lavavajillaslt.webp',
-            'galon': 'img/lavavajillasgl.webp',
-            'caneca':'img/lavavajillascane.webp',
+            '1L':    'img/',
+            'galon': 'img/',
+            'caneca':'img/',
             },
         video: null,
         prices: { '1L': 1.9, 'galon': 4.90, 'caneca': 21 },
