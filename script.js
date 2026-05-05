@@ -27,9 +27,9 @@ const products = [
         longDescription: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
         features: ['Limpieza constante', 'Buen rendimiento', 'Uso diario'],
         imagesBySize: {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/deter100AROlitro.webp',
+            'galon': 'img/deter100AROgalon.webp',
+            'caneca':'img/deter100AROcaneca.webp',
         },
         video: null,
         prices: { '1L': 2.18, 'galon': 7.4, 'caneca': 34.7 },
@@ -227,19 +227,18 @@ const products = [
     },
     {
         id: 13,
-        name: 'CLORO 50 / HIPOCLORITO',
+        name: 'CLORO 50 ',
         category: 'desinfecion_y_sanitizacion',
         description: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
         longDescription: 'Desinfectante clorado para limpieza profunda y control microbiológico.',
         features: ['Alta eliminación bacteriana', 'Uso económico', 'Amplio espectro'],
         imagesBySize:  {
-            '1L':    'img/cloro50L.webp',
             'galon': 'img/clrogl.webp',
             'caneca':'img/cloro50C.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 7.99 },
-        codes:  { '1L': 'DG-001', 'galon': '35756', 'caneca': '38864' },
+        prices: {  'galon': 1.52, 'caneca': 7.99 },
+        codes:  {  'galon': '35756', 'caneca': '38864' },
         badge: ''
     },
     {
@@ -272,8 +271,8 @@ const products = [
             'caneca':'img/soap.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 1.52, 'galon': 4.35, 'caneca': 20 },
+        codes:  { '1L': '0000', 'galon': '0000', 'caneca': '0000' },
         badge: ''
     },
     {
@@ -306,9 +305,10 @@ const products = [
             'caneca':'img/alcoantcane.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.5, 'galon': 7.7, 'caneca': 35.8 },
+        codes:  { '1L': '35670', 'galon': '35672', 'caneca': '35674' },
         badge: ''
+        
     },
     {
         id: 18,
@@ -340,8 +340,8 @@ const products = [
             'caneca':'img/',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 1.73, 'galon': 4.35, 'caneca': 19.9 },
+        codes:  { '1L': '0000', 'galon': '0000', 'caneca': '0000' },
         badge: ''
     },
     {
@@ -352,13 +352,13 @@ const products = [
         longDescription: 'Erradica los malos olores sin enmascararlos. Purificador de ambiente, con una mezcla de fragancias dejando una sensación de higiene y limpieza.',
         features: ['Elimina olores de raíz', 'No los enmascara', 'Fragancia fresca', 'Ambiente limpio'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/eliminadordeoloreslt.webp',
+            'galon': 'img/eliminadordeoloresgl.webp',
+            'caneca':'img/eliminadordeolorecane.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.17, 'galon': 4.35, 'caneca': 36.1 },
+        codes:  { '1L': '0000', 'galon': '0000', 'caneca': '0000' },
         badge: ''
     },
     {
@@ -374,8 +374,8 @@ const products = [
             'caneca':'img/limpiavidrioca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2, 'galon': 5, 'caneca': 21 },
+        codes:  { '1L': '45191', 'galon': '35928', 'caneca': '35930' },
         badge: ''
     },
     {
@@ -391,7 +391,7 @@ const products = [
             'caneca':'img/intahorl.webp',
             },
         video: null,
-        prices: { '1L': 2.40, 'galon': 7.50, 'caneca': 30.50 },
+        prices: { '1L': 2.40, 'galon': 7.40, 'caneca': 30.50 },
         codes:  { '1L': '63429', 'galon': '63428', 'caneca': '63386' },
         badge: ''
     },
@@ -403,8 +403,8 @@ const products = [
         longDescription: 'Detergente líquido para vajilla que elimina grasa y suciedad, dejando platos y utensilios limpios con un aroma agradable. Ideal para uso diario en cocinas de alto movimiento.',
         features: ['Remueve grasa fácilmente', 'Deja aroma agradable', 'Ideal para uso frecuente'],
         imagesBySize:  {
-            '1L':'img/lavavajillasLmanzana.webp',
-            'galon':'img/lavavajillasLnaranga.webp',
+            '1L':'img/lavavajillas presentacioness.jpg',
+            'galon':'img/lavavajillas presentaciones.jpg',
 
 
 
@@ -412,7 +412,7 @@ const products = [
             },
         video: null,
         prices: { '1L': 1.99, 'galon': 5, 'caneca': 21.9 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        codes:  { '1L': '0000', 'galon': '0000', 'caneca': '0000' },
         badge: ''
     },
     {
@@ -423,9 +423,9 @@ const products = [
         longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
         features: ['Seguro para superficies alimentarias', 'No deja residuos', 'Cuida manos y utensilios'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/lavavajillaslt.webp',
+            'galon': 'img/lavavajillasgl.webp',
+            'caneca':'img/lavavajillascane.webp',
             },
         video: null,
         prices: { '1L': 1.9, 'galon': 4.90, 'caneca': 21 },
@@ -491,13 +491,13 @@ const products = [
         longDescription: 'Desincrustante ácido para eliminar sarro, óxido y depósitos minerales en equipos y superficies.',
         features: ['Remueve sarro', 'Recupera superficies', 'Uso técnico'],
         imagesBySize: {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/acimurlitro.webp',
+            'galon': 'img/acimurgl.jpg',
+            'caneca':'img/acimurcane.jpg',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 2.99, 'galon': 11.4, 'caneca': 37.99 },
+        codes:  { '1L': '56130', 'galon': '44423', 'caneca': '56230' },
         badge: ''
     },
     {
@@ -513,8 +513,8 @@ const products = [
             'caneca':'img/Tahox100ca.webp',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.91, 'galon': 13.5, 'caneca': 57.7 },
+        codes:  { '1L': '49748', 'galon': '35943', 'caneca': '52607' },
         badge: ''
     },
     {
@@ -525,13 +525,13 @@ const products = [
         longDescription: 'Ácido técnico para limpieza de incrustaciones difíciles en equipos industriales.',
         features: ['Disuelve minerales', 'Limpieza intensiva', 'Uso profesional'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/nitritclt.webp',
+            'galon': 'img/nitritcgl.webp',
+            'caneca':'img/nitritccaneca.jpg',
             },
         video: null,
-        prices: { '1L': 0.00, 'galon': 0.00, 'caneca': 0.00 },
-        codes:  { '1L': 'DG-001', 'galon': 'DG-002', 'caneca': 'DG-003' },
+        prices: { '1L': 3.92, 'galon': 12.17, 'caneca': 47 },
+        codes:  { '1L': '38049', 'galon': '38310', 'caneca': '61293' },
         badge: ''
     },
 ];
@@ -1014,7 +1014,16 @@ function updateCartUI() {
     }).join('');
 
     const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const iva      = subtotal * IVA_RATE;
+const iva = cart.reduce((s, i) => {
+    const product = products.find(p => p.id === i.productId);
+
+    // 👇 Detecta si es alcohol por el nombre
+    const isALCOHOL = product.name.toLowerCase().includes('ALCOHOL');
+
+    if (isALCOHOL) return s;
+
+    return s + (i.price * i.quantity * IVA_RATE);
+}, 0);
     const total    = subtotal + iva;
 
     cartSummary.innerHTML = `
@@ -1077,7 +1086,7 @@ function handleCheckout(e) {
     const iva      = subtotal * IVA_RATE;
     const total    = subtotal + iva;
 
-    let message  = `🍽️ *NUEVO PEDIDO - TAHOR CLEAN*\n\n`;
+    let message  = `🍽️ *NUEVO PEDIDO - TAHOR CLEAN - RESTAURANTE*\n\n`;
         message += `*DATOS DEL CLIENTE*\n`;
         message += `Nombre: ${data.nombre}\n`;
         message += `Cédula/RUC: ${data.cedula}\n`;
