@@ -22,6 +22,7 @@ const products = [
     {
         id: 1,
         name: 'DETER 100',
+        subname: 'Desengrasante Espumoso',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
         longDescription: 'Desengrasante alcalino para limpieza diaria en cocinas, ideal para mantener superficies libres de grasa.',
@@ -39,6 +40,7 @@ const products = [
     {
         id: 2,
         name: 'DETER PLUS',
+        subname: 'Desengrasante Multiuso',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
         longDescription: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
@@ -58,6 +60,7 @@ const products = [
     {
         id: 3,
         name: 'DETER PRO',
+        subname: 'Desengrasante Concentrado',
         category: 'desengrasantes_de_cocina',
         description: 'Desengrasante alcalino concentrado, pH 13, espuma media. Para limpieza profunda y todo tipo de grasa penetrada. Grado alimenticio.',
         longDescription: 'Desengrasante alcalino concentrado, pH 13, espuma media. Desengrasante concentrado para limpieza profunda, y todo tipo de grasa penetrada. Es de grado alimenticio.',
@@ -766,13 +769,14 @@ function renderProducts(productsToRender = products) {
             <div class="product-info">
                 <span class="product-category">${getCategoryName(product.category)}</span>
                 <h3 class="product-name">${product.name}</h3>
+                <h4 class="product-name2">${product.subname}</h4>
                 <p class="product-description">${product.description}</p>
                 <div class="product-footer">
                     <div class="product-price">$${formatPrice(firstPrice)}<span class="iva"> + IVA</span></div>
                 </div>
             </div>
         </div>`;
-    }).join('');
+    }).join(''); 
 }
 
 function getCategoryName(categoryId) {
@@ -814,6 +818,7 @@ function openProductModal(productId) {
             </div>
             <div class="product-modal-info">
                 <h2>${product.name}</h2>
+                <h4>${product.subname}</h4>
                 <span class="product-modal-category">${getCategoryName(product.category)}</span>
                 <p class="product-modal-description">${product.longDescription}</p>
                 <div class="product-modal-features">
