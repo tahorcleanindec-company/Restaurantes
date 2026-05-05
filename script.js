@@ -282,11 +282,11 @@ const products = [
         features: ['pH balanceado', 'Humectante', 'Aroma agradable', 'Uso diario'],
         imagesBySize:  {
             '1L':    'img/jabonliquido.jpeg',
-            'galon': 'img/DETER HIPOALARGENICO GBR.webp',
-            'caneca':'img/soap.webp',
+            'galon': 'img/img1.jpeg',
+            'caneca':'img/img2.jpeg',
             },
         video: null,
-        prices: { '1L': 1.52, 'galon': 4.35, 'caneca': 20 },
+        prices: { '1L': 1.75, 'galon': 4.35, 'caneca': 20 },
         codes:  { '1L': '0000', 'galon': '0000', 'caneca': '0000' },
         badge: ''
     },
