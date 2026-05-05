@@ -1,7 +1,7 @@
 const categories = [
     { id: 'desengrasantes_de_cocina',      name: 'Desengrasantes de cocina',        icon: '🔥' },
-    { id: 'desinfecion_y_sanitizacion',    name: 'Desinfección y sanitización',     icon: '🍽️' },
     { id: 'lavado_de_vajilla_y_utensilios',name: 'Lavado de vajilla y utensilios',  icon: '🤲' },
+    { id: 'desinfecion_y_sanitizacion',    name: 'Desinfección y sanitización',     icon: '🍽️' },
     { id: 'desincrustantes_y_acidos',      name: 'Desincrustantes y ácidos',        icon: '⚗️' },
     { id: 'multiusos',                     name: 'Multiusos',                       icon: '🤲' },
     { id: 'higiene_de_manos',              name: 'Higiene de manos',                icon: '🛡️' },
@@ -44,9 +44,9 @@ const products = [
         longDescription: 'Desengrasante potente para superficies de cocina, elimina grasa acumulada en estufas, campanas y equipos.',
         features: ['Elimina grasa pesada', 'Acción rápida', 'Reduce esfuerzo'],
         imagesBySize: {
-            '1L':    'img/deter100plusL.webp',
-            'galon': 'img/deter100plusG.webp',
-            'caneca':'img/deter100plusC.webp',
+            '1L':    'img/deter100plus.jpg',
+            'galon': 'img/DETER100 PLUS GLB.webp',
+            'caneca':'img/DETER100 PLUS CANECA.webp',
             },
 
 
