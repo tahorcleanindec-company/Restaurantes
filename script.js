@@ -444,9 +444,9 @@ const products = [
         longDescription: 'Detergente suave de pH neutro diseñado para limpieza segura de vajilla y utensilios. No deja residuos ni olores, ideal para contacto con alimentos.',
         features: ['Seguro para superficies alimentarias', 'No deja residuos', 'Cuida manos y utensilios'],
         imagesBySize:  {
-            '1L':    'img/',
-            'galon': 'img/',
-            'caneca':'img/',
+            '1L':    'img/lava1l.jpg',
+            'galon': 'img/lavagl.jpg',
+            'caneca':'img/lavacane.jpg',
             },
         video: null,
         prices: { '1L': 1.9, 'galon': 4.90, 'caneca': 21 },
