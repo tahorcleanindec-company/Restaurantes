@@ -197,15 +197,15 @@
  
         .slide:nth-child(1) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.75) 0%,rgba(30,15,5,.65) 100%),
-                        url('img/limpieza.webp') center/cover !important;
+                        url('img/limpiez.png') center/cover !important;
         }
         .slide:nth-child(2) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.78) 0%,rgba(10,25,15,.65) 100%),
-                        url('img/potencia.webp') center/cover !important;
+                        url('img/haccp.png') center/cover !important;
         }
         .slide:nth-child(3) .slide-bg {
             background: linear-gradient(150deg,rgba(15,12,9,.75) 0%,rgba(20,10,5,.68) 100%),
-                        url('img/protocolos.webp') center/cover !important;
+                        url('img/deterge.jpeg') center/cover !important;
         }
  
         .slide-content {
