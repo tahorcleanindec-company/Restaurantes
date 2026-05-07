@@ -131,7 +131,7 @@ const products = [
     },
     {
         id: 7,
-        name: 'DESTAPADOR CLEAN (SODA 20%)',
+        name: 'DESTAPADOR ALCALINO (SODA 20%)',
         subname: 'Destapa y disuelve grasa',
         category: 'desengrasantes_de_cocina',
         description: 'Destapador alcalino concentrado para desagües y tuberías. Disuelve grasa acumulada y residuos orgánicos en drenajes de cocina.',
