@@ -591,6 +591,26 @@ const sizeIcons = {
 };
 
 const IVA_RATE        = 0.15;
+
+// ──────────────────────────────────────────────────────────────
+// IVA por producto
+// Los alcoholes están exentos de IVA según la normativa local.
+// Cualquier producto cuyo nombre contenga la palabra "alcohol"
+// (con o sin tilde, mayúsculas o minúsculas) se trata como exento.
+// ──────────────────────────────────────────────────────────────
+function isExentoIva(product) {
+  if (!product || !product.name) return false;
+  return /\balcohol\b/i.test(product.name.normalize('NFD').replace(/[̀-ͯ]/g, ''));
+}
+function ivaRateOf(product) {
+  return isExentoIva(product) ? 0 : IVA_RATE;
+}
+function calcCartIva(items) {
+  return items.reduce((sum, it) => {
+    const p = products.find(x => x.id === it.productId);
+    return sum + (it.price * it.quantity) * ivaRateOf(p);
+  }, 0);
+}
 const WHATSAPP_NUMBER = '+593958812843';
 
 let cart         = [];
@@ -876,12 +896,12 @@ function openProductModal(productId) {
                         <span class="pricing-value" id="basePrice">$${formatPrice(product.prices[defaultSize])}</span>
                     </div>
                     <div class="pricing-detail">
-                        <span class="pricing-label">IVA (15 %)</span>
-                        <span class="pricing-value" id="ivaPrice">$${formatPrice((product.prices[defaultSize] * IVA_RATE).toFixed(2))}</span>
+                        <span class="pricing-label" id="ivaLabel">IVA (${(ivaRateOf(product)*100).toFixed(0)} %)${isExentoIva(product) ? ' — Exento' : ''}</span>
+                        <span class="pricing-value" id="ivaPrice">$${formatPrice((product.prices[defaultSize] * ivaRateOf(product)).toFixed(2))}</span>
                     </div>
                     <div class="pricing-detail pricing-total">
                         <span class="pricing-label">Total</span>
-                        <span class="pricing-value" id="totalPrice">$${formatPrice((product.prices[defaultSize] * (1 + IVA_RATE)).toFixed(2))}</span>
+                        <span class="pricing-value" id="totalPrice">$${formatPrice((product.prices[defaultSize] * (1 + ivaRateOf(product))).toFixed(2))}</span>
                     </div>
                 </div>
                 <div class="product-modal-actions">
@@ -941,8 +961,12 @@ function selectSize(size, price, productId) {
     selectedPrice = price;
     document.querySelectorAll('.size-option').forEach(opt =>
         opt.classList.toggle('active', opt.dataset.size === size));
-    const iva   = price * IVA_RATE;
-    const total = price * (1 + IVA_RATE);
+    const product = products.find(p => p.id === productId);
+    const rate    = ivaRateOf(product);
+    const iva     = price * rate;
+    const total   = price * (1 + rate);
+    const lbl = document.getElementById('ivaLabel');
+    if (lbl) lbl.textContent = `IVA (${(rate*100).toFixed(0)} %)${isExentoIva(product) ? ' — Exento' : ''}`;
     document.getElementById('basePrice').textContent  = `$${formatPrice(price)}`;
     document.getElementById('ivaPrice').textContent   = `$${formatPrice(iva.toFixed(2))}`;
     document.getElementById('totalPrice').textContent = `$${formatPrice(total.toFixed(2))}`;
@@ -1042,21 +1066,12 @@ function updateCartUI() {
     }).join('');
 
     const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-const iva = cart.reduce((s, i) => {
-    const product = products.find(p => p.id === i.productId);
-
-    // 👇 Detecta si es alcohol por el nombre
-    const isALCOHOL = product.name.toLowerCase().includes('ALCOHOL');
-
-    if (isALCOHOL) return s;
-
-    return s + (i.price * i.quantity * IVA_RATE);
-}, 0);
+    const iva      = calcCartIva(cart);
     const total    = subtotal + iva;
 
     cartSummary.innerHTML = `
         <div class="cart-summary-row"><span>Subtotal</span><span>$${formatPrice(subtotal)}</span></div>
-        <div class="cart-summary-row"><span>IVA (15 %)</span><span>$${formatPrice(iva)}</span></div>
+        <div class="cart-summary-row"><span>IVA</span><span>$${formatPrice(iva)}</span></div>
         <div class="cart-summary-row total"><span>Total</span><span>$${formatPrice(total)}</span></div>
         <button class="btn btn-primary btn-full" onclick="openCheckoutModal()">Proceder al Pago</button>`;
 }
@@ -1068,7 +1083,7 @@ function closeCartDrawer() { cartDrawer.classList.remove('active'); cartOverlay.
 function openCheckoutModal() {
     closeCartDrawer();
     const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const iva      = subtotal * IVA_RATE;
+    const iva      = calcCartIva(cart);
     const total    = subtotal + iva;
 
     checkoutSummary.innerHTML = `
@@ -1077,15 +1092,16 @@ function openCheckoutModal() {
             ${cart.map(item => {
                 const p    = products.find(x => x.id === item.productId);
                 const code = p.codes[item.size];
+                const exento = isExentoIva(p) ? ' <small style="color:#16a34a">(Exento IVA)</small>' : '';
                 return `<div class="checkout-item">
-                    <span class="checkout-item-name">[${code}] ${p.name} (${sizeLabels[item.size] || item.size}) x${item.quantity}</span>
+                    <span class="checkout-item-name">[${code}] ${p.name} (${sizeLabels[item.size] || item.size}) x${item.quantity}${exento}</span>
                     <span class="checkout-item-price">$${formatPrice(item.price * item.quantity)}</span>
                 </div>`;
             }).join('')}
         </div>
         <div class="checkout-totals">
             <div class="checkout-row"><span>Subtotal</span><span>$${formatPrice(subtotal)}</span></div>
-            <div class="checkout-row"><span>IVA (15 %)</span><span>$${formatPrice(iva)}</span></div>
+            <div class="checkout-row"><span>IVA</span><span>$${formatPrice(iva)}</span></div>
             <div class="checkout-row total"><span>Total a Pagar</span><span>$${formatPrice(total)}</span></div>
         </div>`;
 
@@ -1111,7 +1127,7 @@ function handleCheckout(e) {
     };
 
     const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const iva      = subtotal * IVA_RATE;
+    const iva      = calcCartIva(cart);
     const total    = subtotal + iva;
 
     let message  = `🍽️ *NUEVO PEDIDO - TAHOR CLEAN - RESTAURANTE*\n\n`;
@@ -1130,12 +1146,13 @@ function handleCheckout(e) {
         const p         = products.find(x => x.id === item.productId);
         const itemTotal = item.price * item.quantity;
         const code      = p.codes[item.size];
-        message += `- [${code}] ${p.name} (${sizeLabels[item.size] || item.size}) x${item.quantity} = $${formatPrice(itemTotal)}\n`;
+        const exento    = isExentoIva(p) ? ' (Exento IVA)' : '';
+        message += `- [${code}] ${p.name} (${sizeLabels[item.size] || item.size}) x${item.quantity} = $${formatPrice(itemTotal)}${exento}\n`;
     });
 
     message += `\n*RESUMEN*\n`;
     message += `Subtotal: $${formatPrice(subtotal)}\n`;
-    message += `IVA (15 %): $${formatPrice(iva)}\n`;
+    message += `IVA: $${formatPrice(iva)}\n`;
     message += `*TOTAL: $${formatPrice(total)}*\n\n`;
     message += `Gracias por su pedido 🙌`;
 
