@@ -600,7 +600,7 @@ const IVA_RATE        = 0.15;
 // ──────────────────────────────────────────────────────────────
 function isExentoIva(product) {
   if (!product || !product.name) return false;
-  return /\balcohol\b/i.test(product.name.normalize('NFD').replace(/[̀-ͯ]/g, ''));
+  return /\balcohol\b/i.test(product.name);
 }
 function ivaRateOf(product) {
   return isExentoIva(product) ? 0 : IVA_RATE;
