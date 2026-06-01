@@ -1,3 +1,220 @@
+// ════════════════════════════════════════════════════════════════════════════════
+// MÓDULO DE PROMOCIONES Y CONVERSIÓN - TAHOR CLEAN
+// ════════════════════════════════════════════════════════════════════════════════
+
+// — Códigos Promocionales Válidos —
+const PROMO_CODES = {
+    'TAHOR10': { type: 'percent', value: 10, label: '10% de descuento primera compra web', firstTimeOnly: true },
+    'RESTAURANTE15': { type: 'percent', value: 15, label: '15% descuento especial restaurantes', firstTimeOnly: false },
+    'MANABI2026': { type: 'percent', value: 8, label: '8% descuento Manabí 2026', firstTimeOnly: false },
+};
+
+// — Descuentos Escalonados Automáticos (sin código) —
+const TIERED_DISCOUNTS = [
+    { minAmount: 100, discountPercent: 15, label: '15% por compra mayor a $100' },
+    { minAmount: 50,  discountPercent: 10, label: '10% por compra mayor a $50'  },
+    { minAmount: 25,  discountPercent: 5,  label: '5% por compra mayor a $25'   },
+];
+
+// — Umbrales de Envío Gratis —
+const FREE_SHIPPING_THRESHOLD = 60; // Dólares
+
+// — Umbrales de Regalos (GWP - Gift With Purchase) —
+const GIFT_THRESHOLDS = [
+    { minAmount: 40, gift: 'Atomizador Profesional GRATIS', icon: '🎁' },
+    { minAmount: 60, gift: 'Envío GRATIS a todo el Ecuador', icon: '🚚' },
+];
+
+// — Estado del código promo aplicado —
+let appliedPromoCode = null;
+let appliedPromoDiscount = 0;
+
+// — Definición de Kits —
+const KITS = {
+    'cocina_segura': {
+        name: 'Kit Cocina Segura',
+        items: [
+            { productId: 6,  size: 'galon' },  // DETER GRILL galón
+            { productId: 24, size: 'galon' },  // LAVAVAJILLAS NEUTRO galón
+            { productId: 8,  size: '1L'    },  // SANITIZER TC 1L
+        ]
+    },
+    'desinfeccion_total': {
+        name: 'Kit Desinfección Total',
+        items: [
+            { productId: 3,  size: 'caneca' }, // DETER PRO caneca
+            { productId: 8,  size: 'galon'  }, // SANITIZER TC galón
+            { productId: 9,  size: 'galon'  }, // OXIQUATS galón
+            { productId: 14, size: 'galon'  }, // JDM JABÓN galón
+        ]
+    },
+    'higiene_integral': {
+        name: 'Kit Higiene Integral',
+        items: [
+            { productId: 6,  size: 'caneca' }, // DETER GRILL caneca
+            { productId: 9,  size: 'caneca' }, // OXIQUATS caneca
+            { productId: 26, size: 'caneca' }, // TAHOR WASH caneca
+        ]
+    },
+};
+
+// ════════════════════════════════════════════════════════════════════════════════
+// FUNCIONES DE PROMOCIÓN
+// ════════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Calcula el descuento escalonado automático según el subtotal.
+ * Retorna el porcentaje de descuento aplicable (0 si ninguno aplica).
+ */
+function getTieredDiscount(subtotal) {
+    for (const tier of TIERED_DISCOUNTS) {
+        if (subtotal >= tier.minAmount) return tier;
+    }
+    return null;
+}
+
+/**
+ * Calcula el subtotal del carrito sin IVA.
+ */
+function getCartSubtotal() {
+    return cart.reduce((s, i) => s + i.price * i.quantity, 0);
+}
+
+/**
+ * Retorna el descuento total aplicado (escalonado + código promo).
+ * El descuento de código promo tiene prioridad sobre el escalonado
+ * (no se acumulan ambos, se aplica el mayor).
+ */
+function getActiveDiscount(subtotal) {
+    const tiered = getTieredDiscount(subtotal);
+    const tieredPct = tiered ? tiered.discountPercent : 0;
+    const promoPct  = appliedPromoDiscount;
+    // Se aplica el mayor de los dos
+    if (promoPct > 0 && promoPct >= tieredPct) {
+        return { percent: promoPct, label: appliedPromoCode ? `Código ${appliedPromoCode}` : 'Descuento aplicado', source: 'promo' };
+    } else if (tieredPct > 0) {
+        return { percent: tieredPct, label: tiered.label, source: 'tiered' };
+    }
+    return null;
+}
+
+/**
+ * Retorna los regalos desbloqueados según el subtotal.
+ */
+function getUnlockedGifts(subtotal) {
+    return GIFT_THRESHOLDS.filter(g => subtotal >= g.minAmount);
+}
+
+/**
+ * Retorna el próximo regalo no desbloqueado (para mostrar en barra de progreso).
+ */
+function getNextGift(subtotal) {
+    return GIFT_THRESHOLDS.find(g => subtotal < g.minAmount) || null;
+}
+
+/**
+ * Aplica el código promocional ingresado en el checkout.
+ */
+function applyPromoCode() {
+    const input    = document.getElementById('codigoPromo');
+    const feedback = document.getElementById('promoFeedback');
+    const code     = (input.value || '').trim().toUpperCase();
+
+    if (!code) {
+        feedback.innerHTML = '<span class="promo-error">Ingresa un código válido.</span>';
+        return;
+    }
+
+    const promo = PROMO_CODES[code];
+    if (!promo) {
+        feedback.innerHTML = '<span class="promo-error">❌ Código no válido. Verifica e inténtalo de nuevo.</span>';
+        appliedPromoCode = null;
+        appliedPromoDiscount = 0;
+        openCheckoutModal();
+        return;
+    }
+
+    appliedPromoCode     = code;
+    appliedPromoDiscount = promo.value;
+    feedback.innerHTML   = `<span class="promo-success">✅ ¡Código aplicado! ${promo.label}</span>`;
+    openCheckoutModal(); // Recalcular resumen
+}
+
+/**
+ * Copia el código promo al portapapeles.
+ */
+function copyPromoCode() {
+    navigator.clipboard.writeText('TAHOR10').then(() => {
+        const btn = document.getElementById('copyPromoCode');
+        if (btn) { btn.textContent = '✅ Copiado!'; setTimeout(() => btn.textContent = 'Copiar', 2000); }
+    }).catch(() => {
+        const btn = document.getElementById('copyPromoCode');
+        if (btn) btn.textContent = 'TAHOR10';
+    });
+}
+
+/**
+ * Agrega todos los productos de un kit al carrito.
+ */
+function addKitToCart(kitId) {
+    const kit = KITS[kitId];
+    if (!kit) return;
+    kit.items.forEach(item => {
+        const product = products.find(p => p.id === item.productId);
+        if (!product) return;
+        const price = product.prices[item.size];
+        if (!price) return;
+        const existing = cart.find(i => i.productId === item.productId && i.size === item.size);
+        if (existing) existing.quantity++;
+        else cart.push({ productId: item.productId, size: item.size, price, quantity: 1 });
+    });
+    updateCartUI();
+    openCart();
+    // Notificación visual
+    const notification = document.createElement('div');
+    notification.className = 'kit-added-notification';
+    notification.innerHTML = `✅ <strong>${kit.name}</strong> agregado al carrito`;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+}
+
+// ════════════════════════════════════════════════════════════════════════════════
+// POP-UP DE BIENVENIDA
+// ════════════════════════════════════════════════════════════════════════════════
+
+function initWelcomePopup() {
+    const popup        = document.getElementById('welcomePopup');
+    const closeBtn     = document.getElementById('closeWelcomePopup');
+    const skipBtn      = document.getElementById('skipWelcomePopup');
+    const promoBarClose= document.getElementById('closePromoBar');
+    const promoBar     = document.getElementById('promoTopBar');
+
+    // Mostrar popup solo si el usuario no lo ha visto antes
+    const alreadySeen = localStorage.getItem('tahor_welcome_popup_v1');
+    if (!alreadySeen && popup) {
+        setTimeout(() => popup.classList.add('active'), 1500);
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeWelcomePopupFn);
+    if (skipBtn)  skipBtn.addEventListener('click',  closeWelcomePopupFn);
+    if (popup)    popup.addEventListener('click', e => { if (e.target === popup) closeWelcomePopupFn(); });
+
+    // Cerrar top bar
+    if (promoBarClose && promoBar) {
+        promoBarClose.addEventListener('click', () => {
+            promoBar.style.display = 'none';
+            localStorage.setItem('tahor_promo_bar_closed', '1');
+        });
+        if (localStorage.getItem('tahor_promo_bar_closed')) promoBar.style.display = 'none';
+    }
+}
+
+function closeWelcomePopupFn() {
+    const popup = document.getElementById('welcomePopup');
+    if (popup) popup.classList.remove('active');
+    localStorage.setItem('tahor_welcome_popup_v1', '1');
+}
+
 const categories = [
     { id: 'desengrasantes_de_cocina',      name: 'Desengrasantes de cocina',        icon: '🔥' },
     { id: 'lavado_de_vajilla_y_utensilios',name: 'Lavado de vajilla y utensilios',  icon: '🤲' },
@@ -652,6 +869,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     initEventListeners();
     renderFooterCategories();
+    initWelcomePopup();
     document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
 });
 
@@ -1065,13 +1283,49 @@ function updateCartUI() {
         </div>`;
     }).join('');
 
-    const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const iva      = calcCartIva(cart);
-    const total    = subtotal + iva;
+    const subtotal      = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const activeDiscount = getActiveDiscount(subtotal);
+    const discountAmount = activeDiscount ? subtotal * (activeDiscount.percent / 100) : 0;
+    const subtotalAfterDiscount = subtotal - discountAmount;
+    const iva            = calcCartIva(cart.map(i => ({ ...i, price: i.price * (1 - (activeDiscount ? activeDiscount.percent / 100 : 0)) })));
+    const total          = subtotalAfterDiscount + iva;
+
+    // Barra de progreso hacia el próximo regalo
+    const nextGift     = getNextGift(subtotal);
+    const unlockedGifts= getUnlockedGifts(subtotal);
+    let progressBarHTML = '';
+    if (nextGift) {
+        const progress = Math.min((subtotal / nextGift.minAmount) * 100, 100);
+        const remaining = (nextGift.minAmount - subtotal).toFixed(2);
+        progressBarHTML = `
+            <div class="cart-progress-bar-wrap">
+                <div class="cart-progress-label">
+                    ${nextGift.icon} Agrega <strong>$${remaining}</strong> más para desbloquear: <strong>${nextGift.gift}</strong>
+                </div>
+                <div class="cart-progress-track">
+                    <div class="cart-progress-fill" style="width:${progress}%"></div>
+                </div>
+            </div>`;
+    } else {
+        progressBarHTML = `<div class="cart-progress-bar-wrap cart-progress-complete">🎁 ¡Tienes envío GRATIS y todos los regalos desbloqueados!</div>`;
+    }
+
+    // Mostrar regalos desbloqueados
+    const giftsHTML = unlockedGifts.length > 0
+        ? `<div class="cart-gifts">${unlockedGifts.map(g => `<span class="cart-gift-badge">${g.icon} ${g.gift}</span>`).join('')}</div>`
+        : '';
+
+    // Mostrar descuento activo
+    const discountHTML = activeDiscount
+        ? `<div class="cart-summary-row cart-discount-row"><span>🏷️ ${activeDiscount.label}</span><span class="discount-value">-$${formatPrice(discountAmount)}</span></div>`
+        : '';
 
     cartSummary.innerHTML = `
+        ${progressBarHTML}
+        ${giftsHTML}
         <div class="cart-summary-row"><span>Subtotal</span><span>$${formatPrice(subtotal)}</span></div>
-        <div class="cart-summary-row"><span>IVA</span><span>$${formatPrice(iva)}</span></div>
+        ${discountHTML}
+        <div class="cart-summary-row"><span>IVA (15%)</span><span>$${formatPrice(iva)}</span></div>
         <div class="cart-summary-row total"><span>Total</span><span>$${formatPrice(total)}</span></div>
         <button class="btn btn-primary btn-full" onclick="openCheckoutModal()">Proceder al Pago</button>`;
 }
@@ -1082,9 +1336,21 @@ function closeCartDrawer() { cartDrawer.classList.remove('active'); cartOverlay.
 // ─── CHECKOUT ─────────────────────────────────────────────────────────────────
 function openCheckoutModal() {
     closeCartDrawer();
-    const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const iva      = calcCartIva(cart);
-    const total    = subtotal + iva;
+    const subtotal       = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const activeDiscount = getActiveDiscount(subtotal);
+    const discountAmount = activeDiscount ? subtotal * (activeDiscount.percent / 100) : 0;
+    const subtotalAfterDiscount = subtotal - discountAmount;
+    const iva            = calcCartIva(cart.map(i => ({ ...i, price: i.price * (1 - (activeDiscount ? activeDiscount.percent / 100 : 0)) })));
+    const total          = subtotalAfterDiscount + iva;
+    const unlockedGifts  = getUnlockedGifts(subtotal);
+
+    const discountRow = activeDiscount
+        ? `<div class="checkout-row checkout-discount-row"><span>🏷️ ${activeDiscount.label}</span><span class="discount-value">-$${formatPrice(discountAmount)}</span></div>`
+        : '';
+
+    const giftsRow = unlockedGifts.length > 0
+        ? `<div class="checkout-gifts-row">${unlockedGifts.map(g => `<span class="checkout-gift-badge">${g.icon} ${g.gift}</span>`).join('')}</div>`
+        : '';
 
     checkoutSummary.innerHTML = `
         <h4>Resumen del Pedido</h4>
@@ -1099,9 +1365,11 @@ function openCheckoutModal() {
                 </div>`;
             }).join('')}
         </div>
+        ${giftsRow}
         <div class="checkout-totals">
             <div class="checkout-row"><span>Subtotal</span><span>$${formatPrice(subtotal)}</span></div>
-            <div class="checkout-row"><span>IVA</span><span>$${formatPrice(iva)}</span></div>
+            ${discountRow}
+            <div class="checkout-row"><span>IVA (15%)</span><span>$${formatPrice(iva)}</span></div>
             <div class="checkout-row total"><span>Total a Pagar</span><span>$${formatPrice(total)}</span></div>
         </div>`;
 
@@ -1126,9 +1394,13 @@ function handleCheckout(e) {
         notas:       formData.get('notas'),
     };
 
-    const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
-    const iva      = calcCartIva(cart);
-    const total    = subtotal + iva;
+    const subtotal       = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const activeDiscount = getActiveDiscount(subtotal);
+    const discountAmount = activeDiscount ? subtotal * (activeDiscount.percent / 100) : 0;
+    const subtotalAfterDiscount = subtotal - discountAmount;
+    const iva            = calcCartIva(cart.map(i => ({ ...i, price: i.price * (1 - (activeDiscount ? activeDiscount.percent / 100 : 0)) })));
+    const total          = subtotalAfterDiscount + iva;
+    const unlockedGifts  = getUnlockedGifts(subtotal);
 
     let message  = `🍽️ *NUEVO PEDIDO - TAHOR CLEAN - RESTAURANTE*\n\n`;
         message += `*DATOS DEL CLIENTE*\n`;
@@ -1140,6 +1412,7 @@ function handleCheckout(e) {
         message += `Dirección: ${data.direccion}\n`;
         message += `Ciudad: ${data.ciudad}, ${data.provincia}\n`;
     if (data.notas)       message += `Notas: ${data.notas}\n`;
+    if (data.codigoPromo) message += `Código Promo: ${data.codigoPromo.toUpperCase()}\n`;
         message += `\n*PRODUCTOS*\n`;
 
     cart.forEach(item => {
@@ -1152,9 +1425,16 @@ function handleCheckout(e) {
 
     message += `\n*RESUMEN*\n`;
     message += `Subtotal: $${formatPrice(subtotal)}\n`;
-    message += `IVA: $${formatPrice(iva)}\n`;
-    message += `*TOTAL: $${formatPrice(total)}*\n\n`;
-    message += `Gracias por su pedido 🙌`;
+    if (activeDiscount) {
+        message += `Descuento (${activeDiscount.label}): -$${formatPrice(discountAmount)}\n`;
+    }
+    message += `IVA (15%): $${formatPrice(iva)}\n`;
+    message += `*TOTAL: $${formatPrice(total)}*\n`;
+    if (unlockedGifts.length > 0) {
+        message += `\n*REGALOS DESBLOQUEADOS*\n`;
+        unlockedGifts.forEach(g => message += `${g.icon} ${g.gift}\n`);
+    }
+    message += `\nGracias por su pedido 🙌`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}?text=${encodeURIComponent(message)}`, '_blank');
     cart = [];
@@ -1181,3 +1461,7 @@ window.updateQuantity       = updateQuantity;
 window.removeFromCart       = removeFromCart;
 window.openCheckoutModal    = openCheckoutModal;
 window.filterByCategory     = filterByCategory;
+window.addKitToCart         = addKitToCart;
+window.applyPromoCode       = applyPromoCode;
+window.copyPromoCode        = copyPromoCode;
+window.closeWelcomePopupFn  = closeWelcomePopupFn;

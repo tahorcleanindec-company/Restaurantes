@@ -14,6 +14,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TOP BAR PROMOCIONAL - TAHOR CLEAN
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="promo-top-bar" id="promoTopBar">
+    <div class="promo-top-bar-inner">
+        <span class="promo-top-bar-text">
+            <strong>🎁 PRIMERA COMPRA ONLINE:</strong> Usa el código <strong class="promo-code-inline">TAHOR10</strong> y obtén <strong>10% de descuento</strong>
+            <span class="promo-separator">|</span>
+            <strong>🚚 ENVÍO GRATIS</strong> en pedidos mayores a $60
+        </span>
+        <button class="promo-top-bar-close" id="closePromoBar" aria-label="Cerrar">&times;</button>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     POP-UP DE BIENVENIDA / PRIMERA VISITA
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="welcome-popup-overlay" id="welcomePopup">
+    <div class="welcome-popup">
+        <button class="welcome-popup-close" id="closeWelcomePopup" aria-label="Cerrar">&times;</button>
+        <div class="welcome-popup-badge">OFERTA EXCLUSIVA WEB</div>
+        <h2 class="welcome-popup-title">¡Bienvenido a la Tienda Online de Tahor Clean!</h2>
+        <p class="welcome-popup-subtitle">Compra directamente desde nuestra plataforma y accede a beneficios exclusivos que no encontrarás en otro canal.</p>
+        <div class="welcome-popup-offer">
+            <div class="welcome-popup-offer-item">
+                <span class="offer-icon">🏷️</span>
+                <div>
+                    <strong>10% de descuento</strong>
+                    <span>en tu primera compra web</span>
+                </div>
+            </div>
+            <div class="welcome-popup-offer-item">
+                <span class="offer-icon">🎁</span>
+                <div>
+                    <strong>Atomizador Profesional GRATIS</strong>
+                    <span>en compras mayores a $40</span>
+                </div>
+            </div>
+            <div class="welcome-popup-offer-item">
+                <span class="offer-icon">🚚</span>
+                <div>
+                    <strong>Envío Gratis</strong>
+                    <span>en pedidos mayores a $60</span>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-popup-code">
+            <span class="code-label">Tu código de descuento:</span>
+            <span class="code-value" id="promoCodeDisplay">TAHOR10</span>
+            <button class="code-copy-btn" id="copyPromoCode" onclick="copyPromoCode()">Copiar</button>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="closeWelcomePopupFn(); document.getElementById('productos').scrollIntoView({behavior:'smooth'})">
+            ¡Quiero mi descuento! Ver Productos
+        </button>
+        <button class="welcome-popup-skip" id="skipWelcomePopup">No gracias, prefiero pagar precio completo</button>
+    </div>
+</div>
+
 <header class="header" id="header">
     <div class="header-inner">
         <a href="#" class="logo">
@@ -25,6 +84,7 @@
 
         <nav class="nav-desktop">
             <a href="#inicio"    class="nav-link active">Inicio</a>
+            <a href="#kits"      class="nav-link nav-link-promo">Kits 🎁</a>
             <a href="#productos" class="nav-link">Productos</a>
             <a href="#nosotros"  class="nav-link">Nosotros</a>
             <a href="#contacto"  class="nav-link">Contacto</a>
@@ -57,6 +117,7 @@
     </div>
     <nav class="nav-mobile" id="mobileMenu">
         <a href="#inicio"    class="nav-link">Inicio</a>
+        <a href="#kits"      class="nav-link nav-link-promo">Kits 🎁</a>
         <a href="#productos" class="nav-link">Productos</a>
         <a href="#nosotros"  class="nav-link">Nosotros</a>
         <a href="#contacto"  class="nav-link">Contacto</a>
@@ -155,6 +216,173 @@
                     <p>Sin residuos tóxicos en superficies de contacto alimentario.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECCIÓN DE KITS RECOMENDADOS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="kits-section" id="kits">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Soluciones Completas</span>
+            <h2>Kits <span>Recomendados</span></h2>
+            <p class="section-desc">Ahorra tiempo y dinero con nuestros kits diseñados por expertos en inocuidad alimentaria. Cada kit incluye los productos esenciales para una operación limpia y certificada.</p>
+        </div>
+        <div class="kits-grid" id="kitsGrid">
+
+            <!-- KIT 1: COCINA SEGURA -->
+            <div class="kit-card">
+                <div class="kit-card-header">
+                    <div class="kit-badge kit-badge-basic">Kit Básico</div>
+                    <div class="kit-icon">🔥</div>
+                    <h3 class="kit-name">Kit Cocina Segura</h3>
+                    <p class="kit-desc">Lo esencial para arrancar grasa y sanitizar superficies de contacto alimentario en tu restaurante.</p>
+                </div>
+                <div class="kit-products">
+                    <div class="kit-product-item">
+                        <img src="img/detergrilllitro.webp" alt="Deter Grill" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">DETER GRILL</span>
+                            <span class="kit-product-size">Galón</span>
+                        </div>
+                        <span class="kit-product-price">$11.00</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/lava1l.jpg" alt="Lavavajillas Neutro" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">LAVAVAJILLAS NEUTRO</span>
+                            <span class="kit-product-size">Galón</span>
+                        </div>
+                        <span class="kit-product-price">$4.90</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/sanitizer tc.webp" alt="Sanitizer TC" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">SANITIZER TC</span>
+                            <span class="kit-product-size">1 Litro</span>
+                        </div>
+                        <span class="kit-product-price">$3.26</span>
+                    </div>
+                </div>
+                <div class="kit-footer">
+                    <div class="kit-pricing">
+                        <span class="kit-original-price">Precio individual: $19.16</span>
+                        <span class="kit-savings">Ahorras 10%</span>
+                        <span class="kit-total-price">Kit: $17.24</span>
+                    </div>
+                    <div class="kit-gift-badge">🎁 Incluye Atomizador Profesional GRATIS</div>
+                    <button class="btn btn-primary btn-full" onclick="addKitToCart('cocina_segura')">
+                        Agregar Kit al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- KIT 2: DESINFECCION TOTAL -->
+            <div class="kit-card kit-card-featured">
+                <div class="kit-card-header">
+                    <div class="kit-badge kit-badge-advanced">Kit Avanzado ★ Más Vendido</div>
+                    <div class="kit-icon">🛡️</div>
+                    <h3 class="kit-name">Kit Desinfección Total</h3>
+                    <p class="kit-desc">Cobertura completa para auditorías ARCSA y cumplimiento HACCP. Ideal para restaurantes con alto tráfico.</p>
+                </div>
+                <div class="kit-products">
+                    <div class="kit-product-item">
+                        <img src="img/Deter100proc.webp" alt="Deter Pro" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">DETER PRO</span>
+                            <span class="kit-product-size">Caneca</span>
+                        </div>
+                        <span class="kit-product-price">$39.20</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/35657 SANITIZER TC.webp" alt="Sanitizer TC" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">SANITIZER TC</span>
+                            <span class="kit-product-size">Galón</span>
+                        </div>
+                        <span class="kit-product-price">$10.00</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/48085 OXI QUATS GBC.webp" alt="OXIQUATS" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">OXIQUATS</span>
+                            <span class="kit-product-size">Galón</span>
+                        </div>
+                        <span class="kit-product-price">$11.00</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/jabonliquidogl.webp" alt="Jabón Antibacterial" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">JDM JABÓN ANTIBACTERIAL</span>
+                            <span class="kit-product-size">Galón</span>
+                        </div>
+                        <span class="kit-product-price">$6.19</span>
+                    </div>
+                </div>
+                <div class="kit-footer">
+                    <div class="kit-pricing">
+                        <span class="kit-original-price">Precio individual: $66.39</span>
+                        <span class="kit-savings">Ahorras 15%</span>
+                        <span class="kit-total-price">Kit: $56.43</span>
+                    </div>
+                    <div class="kit-gift-badge">🚚 ENVÍO GRATIS + 🎁 Atomizador Profesional GRATIS</div>
+                    <button class="btn btn-primary btn-full" onclick="addKitToCart('desinfeccion_total')">
+                        Agregar Kit al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- KIT 3: HIGIENE INTEGRAL -->
+            <div class="kit-card">
+                <div class="kit-card-header">
+                    <div class="kit-badge kit-badge-premium">Kit Premium</div>
+                    <div class="kit-icon">✨</div>
+                    <h3 class="kit-name">Kit Higiene Integral</h3>
+                    <p class="kit-desc">Solución completa para cocinas que buscan certificación y protocolo POES documentado.</p>
+                </div>
+                <div class="kit-products">
+                    <div class="kit-product-item">
+                        <img src="img/detergrillcaneca.webp" alt="Deter Grill Caneca" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">DETER GRILL</span>
+                            <span class="kit-product-size">Caneca</span>
+                        </div>
+                        <span class="kit-product-price">$49.00</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/46730 OXIQUATS 20L.webp" alt="OXIQUATS Caneca" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">OXIQUATS</span>
+                            <span class="kit-product-size">Caneca</span>
+                        </div>
+                        <span class="kit-product-price">$45.00</span>
+                    </div>
+                    <div class="kit-product-item">
+                        <img src="img/35922 TAHOR WASH 20L.webp" alt="Tahor Wash" onerror="this.src='https://images.unsplash.com/photo-1585421514738-01798e348b17?w=100&q=80'">
+                        <div class="kit-product-info">
+                            <span class="kit-product-name">TAHOR WASH</span>
+                            <span class="kit-product-size">Caneca</span>
+                        </div>
+                        <span class="kit-product-price">$47.82</span>
+                    </div>
+                </div>
+                <div class="kit-footer">
+                    <div class="kit-pricing">
+                        <span class="kit-original-price">Precio individual: $141.82</span>
+                        <span class="kit-savings">Ahorras 15% + Asesoría POES</span>
+                        <span class="kit-total-price">Kit: $120.55</span>
+                    </div>
+                    <div class="kit-gift-badge">🚚 ENVÍO GRATIS + 📊 Ficha Técnica POES incluida</div>
+                    <button class="btn btn-primary btn-full" onclick="addKitToCart('higiene_integral')">
+                        Agregar Kit al Carrito
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -397,6 +625,14 @@
             <div class="form-group">
                 <label for="notas">Notas adicionales (opcional)</label>
                 <textarea name="notas" id="notas" rows="3" placeholder="Instrucciones especiales, horario de entrega, etc."></textarea>
+            </div>
+            <div class="form-group promo-code-group">
+                <label for="codigoPromo">Código Promocional (opcional)</label>
+                <div class="promo-input-row">
+                    <input type="text" name="codigoPromo" id="codigoPromo" placeholder="Ej: TAHOR10" style="text-transform:uppercase">
+                    <button type="button" class="btn btn-outline promo-apply-btn" onclick="applyPromoCode()">Aplicar</button>
+                </div>
+                <div class="promo-feedback" id="promoFeedback"></div>
             </div>
             <div class="checkout-summary" id="checkoutSummary"></div>
             <button type="submit" class="btn btn-whatsapp btn-full">
